@@ -1,5 +1,4 @@
 import React from 'react';
-import Toolbar from '@mui/material/Toolbar';
 import LogoMain from '../assets/icons/logo-main.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {HeaderAppBar, HeaderBox, HeaderButton, HeaderContainer, HeaderToolbar} from './custom-components';
@@ -12,7 +11,7 @@ const Header = () => {
 		<HeaderAppBar >
 			<HeaderContainer>
 				<HeaderToolbar disableGutters>
-					<img src={LogoMain} />
+					<img src={LogoMain} alt="LOGO" />
 					<HeaderBox>
 						{pages.map((page) => (
 							<HeaderButton
