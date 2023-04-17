@@ -10,14 +10,6 @@ export const HeaderButton = styled(Button)`
     font-size: 18px;
 		`;
 
-export const DemoButton = styled(Button)`
-		background-color: #3F25F2;
-		color: #ffffff;
-		border-radius: 9999px;
-		padding: 12px 40px;
-		font-size: 17px;
-	`;
-
 export const HeaderBox = styled(Box)`
 		flex-grow: 1;
 		display: flex;

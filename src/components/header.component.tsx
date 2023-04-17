@@ -2,7 +2,8 @@ import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import LogoMain from '../assets/icons/logo-main.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {DemoButton, HeaderAppBar, HeaderBox, HeaderButton, HeaderContainer, HeaderToolbar} from './custom-components';
+import {HeaderAppBar, HeaderBox, HeaderButton, HeaderContainer, HeaderToolbar} from './custom-components';
+import {MainButton} from './common-button.component';
 const pages = ['Products', 'Services', 'Solutions', 'About us'];
 
 
@@ -21,7 +22,7 @@ const Header = () => {
 							</HeaderButton>
 						))}
 					</HeaderBox>
-					<DemoButton>Book a Demo</DemoButton>
+					<MainButton>Book a Demo</MainButton>
 				</HeaderToolbar>
 			</HeaderContainer>
 		</HeaderAppBar>
