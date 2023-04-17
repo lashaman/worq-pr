@@ -1,7 +1,6 @@
 import {styled} from '@mui/material';
 import Button from '@mui/material/Button';
 
-type buttonType = 'main' | 'secondary';
 
 const buttonStyles = {
 	main: {
@@ -12,31 +11,31 @@ const buttonStyles = {
 		backgroundColor: '#EFEEFF',
 		color: '#3F25F2',
 	}
-}
+};
 
 export const MainButton = styled(Button)({
+	backgroundColor: buttonStyles.main.backgroundColor,
+	color: buttonStyles.main.color,
+	borderRadius: '9999px',
+	padding: '12px 40px',
+	fontSize: '17px',
+	'&:hover, &:focus, &:active': {
 		backgroundColor: buttonStyles.main.backgroundColor,
 		color: buttonStyles.main.color,
-		borderRadius: '9999px',
-		padding: '12px 40px',
-		fontSize: '17px',
-		'&:hover, &:focus, &:active': {
-			backgroundColor: buttonStyles.main.backgroundColor,
-			color: buttonStyles.main.color,
-			opacity: 0.8,
-		},
-	});
+		opacity: 0.8,
+	},
+});
 
 export const SecondaryButton = styled(Button)({
+	backgroundColor: buttonStyles.secondary.backgroundColor,
+	color: buttonStyles.secondary.color,
+	borderRadius: '9999px',
+	padding: '12px 40px',
+	fontSize: '17px',
+	'&:hover, &:focus, &:active': {
 		backgroundColor: buttonStyles.secondary.backgroundColor,
 		color: buttonStyles.secondary.color,
-		borderRadius: '9999px',
-		padding: '12px 40px',
-		fontSize: '17px',
-		'&:hover, &:focus, &:active': {
-			backgroundColor: buttonStyles.secondary.backgroundColor,
-			color: buttonStyles.secondary.color,
-			opacity: 0.8,
-		},
-		});
+		opacity: 0.8,
+	},
+});
 
