@@ -1,0 +1,14 @@
+{
+  "header.menu.item1": "Products",
+  "header.menu.item2": "Services",
+  "header.menu.item3": "Solutions",
+  "header.menu.item4": "About us",
+  "hero.description.heading": "Improve\nWork Quality",
+  "hero.description.text": "WORQ is a no-code digital platform that enables organizations to deliver higher quality, defect-free work.",
+  "hero.description.button.discover": "Discover",
+  "hero.description.button.bookDemo": "Book A Demo With Us",
+  "notification.top.title": "Eliminate Defects" ,
+  "notification.top.description": "Do it right every time. \nNo excuses.",
+  "notification.bottom.title":  "Reduce Costs",
+  "notification.bottom.description": "Faster work. Less mistakes,\nfewer repairs and callbacks"
+}

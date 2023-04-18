@@ -4,9 +4,12 @@ import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
+import Colors from '../config/colors';
 
 export const HeaderButton = styled(Button)`
-    color: #000000;
+    color: ${Colors.black};
+		padding-left: 25px;
+		padding-right: 25px;
     font-size: 18px;
 		`;
 
@@ -24,7 +27,7 @@ export const HeaderToolbar = styled(Toolbar)`
 		padding: 0;
 		`;
 
-export const HeaderContainer = styled(Container)`
+export const CustomContainer = styled(Container)`
 	width: 1280px;
 	align-items: center;
 	justify-content: center;
@@ -41,6 +44,6 @@ export const HeaderContainer = styled(Container)`
 export const HeaderAppBar = styled(AppBar)`
 	position: static;
 	box-shadow: none;
-	background-color: #ffffff;
+	background-color: ${Colors.white};
   height: 100px;
 	`;
