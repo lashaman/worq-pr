@@ -8,7 +8,7 @@ import Darkside from '../assets/images/darkside.png';
 import EdgeWater from '../assets/images/edgewater.png';
 import FifthFlour from '../assets/images/fifthflour.png';
 
-const ServicesContainer = styled(Container)`
+const ClientsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,14 +51,14 @@ const clients = [
 	Darkside
 ];
 
-const Services = () => {
+const Clients = () => {
 	return (
-		<ServicesContainer maxWidth={false}>
+		<ClientsContainer maxWidth={false}>
 			<ServiceBox>
 				<Grid container spacing={4} sx={{width: '100%'}}>
 					<Grid item xs={4}>
 						<ServiceTitle variant="h3">
-							{t('services.title')}
+							{t('clients.title')}
 						</ServiceTitle>
 					</Grid>
 					<ImgGrid item xs={8}>
@@ -68,8 +68,8 @@ const Services = () => {
 					</ImgGrid>
 				</Grid>
 			</ServiceBox>
-		</ServicesContainer>
+		</ClientsContainer>
 	);
 };
 
-export default Services;
+export default Clients;

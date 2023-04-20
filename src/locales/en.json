@@ -11,5 +11,21 @@
   "notification.top.description": "Do it right every time. \nNo excuses.",
   "notification.bottom.title":  "Reduce Costs",
   "notification.bottom.description": "Faster work. Less mistakes,\nfewer repairs and callbacks",
-  "services.title": "Our Successful Clients"
+  "clients.title": "Our Successful Clients",
+  "products.workQuality.title": "Ensure Quality Work",
+  "products.workQuality.description": "Empower quality managers and auditors with actionable insights and evidence both during and after work",
+  "products.workQuality.button": "Learn More",
+  "products.organizeKnowledge.title": "Organize Knowledge",
+  "products.organizeKnowledge.description": "Implement best practice by providing context-specific knowledge to all your workers",
+  "products.registersInformation.title": "Manage registers of information",
+  "products.registersInformation.description": "Asset, skill, risk, control registers. Any register of information you can think of, all templated and integrated with no code",
+  "products.bestSecurity.title": "Best-in-class security",
+  "products.bestSecurity.description": "IRAP Assessed to Protected, we take security seriously.",
+  "products.bestWork.title": "Do Your Best Work",
+  "products.bestWork.description": "Enabling staff to meet quality objectives across workflows, teams and organisation",
+  "products.familiarTools.title": "Bring familiar tools with you",
+  "products.familiarTools.description": "Seamlessly use WORQ with a wide range of enterprise software with our best-in-class integration services",
+  "products.create.improve.title": "Create & Improve Templates",
+  "products.create.improve.description": "Create your own or choose from a wide variety of templates for audits, test plans, procedures and more",
+  "products.productImage.title": "How We Help \nBusinesses"
 }

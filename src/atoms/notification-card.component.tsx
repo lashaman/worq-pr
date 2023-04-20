@@ -31,13 +31,13 @@ const NotificationIcon = styled(Box)`
 `;
 
 const NotificationTitle = styled(Typography)`
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   color: ${Colors.purple};
 `;
 
 const NotificationDescription = styled(Typography)`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: ${Colors.black};
 `;
