@@ -39,5 +39,13 @@
   "benefits.list.reduceCosts.description": "Faster work. Less mistakes, fewer repairs and callbacks",
   "benefits.list.achieveCompliance.title": "Achieve total compliance",
   "benefits.list.achieveCompliance.description": "Comply with safety and environmental law. Have relevant legislation at your fingertips",
-  "benefits.description.button.bookDemo": "Book A Demo"
+  "benefits.description.button.bookDemo": "Book A Demo",
+  "testimonials.title": "What customers say about WORQ",
+  "testimonials.subtitle": "find out what people who have \ntrusted us say about us",
+  "testimonials.first.description": "An extremely flexible product to which we have been able to apply to any task we can think of to date. Critically, it's super easy to use in the field on our phones and tablets, being intuitive and requiring minimal interactions.\nI encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.",
+  "testimonials.first.companyRepresentative.name": "John Smith",
+  "testimonials.first.companyRepresentative.position": "Chief Executive Officer",
+  "testimonials.second.description": "An extremely flexible product to which we have been able to apply to any task we can think of to date. Critically, it's super easy to use in the field on our phones and tablets, being intuitive and requiring minimal interactions.\nI encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.",
+  "testimonials.second.companyRepresentative.name": "Matt Hornby",
+  "testimonials.second.companyRepresentative.position": "Operations Specialist"
 }
