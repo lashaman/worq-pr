@@ -2,7 +2,7 @@ import {
 	Box,
 	Grid, styled, Typography,
 } from '@mui/material';
-import React, {useState} from 'react';
+import React from 'react';
 import ProductCard from '../atoms/product-card.component';
 import {useTranslation} from 'react-i18next';
 import HowWeHelp from '../assets/images/how-we-help.png';

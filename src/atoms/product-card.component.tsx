@@ -4,14 +4,13 @@ import {
 	Card,
 	CardActions,
 	CardContent,
-	CardHeader, Grid,
-	Stack,
+	CardHeader,
+	Grid,
 	styled,
 	Typography
 } from '@mui/material';
 import Colors from '../config/colors';
 import React from 'react';
-import {useTranslation} from 'react-i18next';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {Product} from '../interfaces/product.interface';
 
