@@ -1,6 +1,19 @@
-import {Box, Card, CardActions, CardContent, CardHeader, IconButton, styled, Typography} from '@mui/material';
+import {
+	Box,
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	CardHeader, Grid,
+	Stack,
+	styled,
+	Typography
+} from '@mui/material';
 import Colors from '../config/colors';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import {Product} from '../interfaces/product.interface';
 
 const ProductIcon = styled(Box)`
   width: 82px;
@@ -27,38 +40,88 @@ const ProductCustomCard = styled(Card)`
 	background-color: ${Colors.white};
 `;
 
+const ProductCardHeader = styled(CardHeader)`
+	padding-bottom: 20px;
+`;
 
-interface ProductCardProps {
-	title: string;
-	description: string;
-	icon: string;
-	buttonText: string;
+const ProductCardContent = styled(CardContent)`
+	height: 81px;
+	padding-top: 0;
+	padding-bottom: 20px;
+`;
+
+const ProductDescription = styled(Typography)`
+	font-size: 1rem;
+	color: ${Colors.black};
+`;
+
+const ProductCardActions = styled(CardActions)`
+	padding: 0;
+	height: 64px;
+	width: 100%;
+`;
+
+const ProductCardButton = styled(Button)`
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	height: 100%;
+	width: 94%;
+	margin: 0 auto;
+	text-align: left;
+	border-top: 2px solid ${Colors.purpleLighter};
+	font-size: 1rem;
+	font-weight: 700;
+	color: ${Colors.purple};
+	&:hover, 
+	&:active,
+	&:focus {
+		background-color: ${Colors.white};
+		transition: opacity 0.2s ease-in-out;
+		opacity: 0.8;
+  }
+`;
+
+
+interface ProductCardProps extends Product {
+	handler: (id: number) => void;
 }
 
-const ProductCard = ({title, description, icon}: ProductCardProps) => {
+const ProductCard = ({id, title, description, icon, buttonText, handler}: ProductCardProps) => {
 	return (
 		<ProductCustomCard>
-			<CardHeader
-				avatar={
-					<ProductIcon>
-						<img src={icon} alt="O"/>
-					</ProductIcon>
-				}
-				title={
-					<ProductTitle variant="h3" >
-						{title}
-					</ProductTitle>
-				}
-			/>
-			<CardContent>
-				<Typography variant="body2" color="text.secondary">
-					{description}
-				</Typography>
-			</CardContent>
-			<CardActions disableSpacing>
-				<IconButton aria-label="share">
-				</IconButton>
-			</CardActions>
+			<Grid
+				container
+				direction="column"
+				justifyContent="space-between"
+				alignItems="center"
+			>
+				<ProductCardHeader
+					avatar={
+						<ProductIcon>
+							<img src={icon} alt="O"/>
+						</ProductIcon>
+					}
+					title={
+						<ProductTitle variant="h3" >
+							{title}
+						</ProductTitle>
+					}
+				/>
+				<ProductCardContent>
+					<ProductDescription variant="h6" >
+						{description}
+					</ProductDescription>
+				</ProductCardContent>
+				<ProductCardActions disableSpacing>
+					<ProductCardButton
+						size="small"
+						onClick={() => handler(id)}
+						endIcon={<KeyboardArrowRightIcon fontSize="large" sx={{marginRight: '-2px'}} />}>
+						{buttonText}
+					</ProductCardButton>
+				</ProductCardActions>
+			</Grid>
 		</ProductCustomCard>
 	);
 };

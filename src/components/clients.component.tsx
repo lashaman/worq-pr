@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Grid, styled, Typography} from '@mui/material';
+import {Box, Grid, styled, Typography} from '@mui/material';
 import {t} from 'i18next';
 import Colors from '../config/colors';
 import Bastil from '../assets/images/bastil.png';
@@ -7,8 +7,9 @@ import Boleir from '../assets/images/boleir.png';
 import Darkside from '../assets/images/darkside.png';
 import EdgeWater from '../assets/images/edgewater.png';
 import FifthFlour from '../assets/images/fifthflour.png';
+import {CustomContainer} from '../atoms/custom-components';
 
-const ClientsContainer = styled(Container)`
+const ClientsContainer = styled(CustomContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
