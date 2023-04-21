@@ -1,7 +1,9 @@
 import React from 'react';
-import {Box, Card, CardContent, Grid, styled, Typography} from '@mui/material';
+import {Card, CardContent, Grid, styled, Typography} from '@mui/material';
 import Colors from '../config/colors';
 import {useTranslation} from 'react-i18next';
+import IconBox from './icon-box.component';
+import {CustomCardProps} from '../interfaces/custom-card-props.interface';
 
 const CustomCard = styled(Card)`
   width: 278px;
@@ -20,16 +22,6 @@ const NotificationCardContent = styled(CardContent)`
   padding: 10px 20px 10px 20px;
 `;
 
-const NotificationIcon = styled(Box)`
-  width: 40px;
-  height: 40px;
-  background-color: ${Colors.purpleLighter};
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const NotificationTitle = styled(Typography)`
   font-size: 17px;
   font-weight: 700;
@@ -42,20 +34,14 @@ const NotificationDescription = styled(Typography)`
   color: ${Colors.black};
 `;
 
-interface NotificationCardProps {
-	title: string;
-	description: string;
-	icon: string;
-}
-
-const NotificationCard = ({title, description, icon}: NotificationCardProps) => {
+const NotificationCard = ({title, description, icon}: CustomCardProps) => {
 	const {t} = useTranslation();
 	return (
 		<CustomCard>
 			<NotificationCardContent>
-				<NotificationIcon>
+				<IconBox width="40px" height="40px">
 					<img src={icon} alt="O"/>
-				</NotificationIcon>
+				</IconBox>
 				<Grid container spacing={0} sx={{paddingLeft: '20px'}}>
 					<Grid item xs={12}>
 						<NotificationTitle variant="h5"  gutterBottom>

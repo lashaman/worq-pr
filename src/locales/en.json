@@ -28,5 +28,16 @@
   "products.create.improve.title": "Create & Improve Templates",
   "products.create.improve.description": "Create your own or choose from a wide variety of templates for audits, test plans, procedures and more",
   "products.productImage.title": "How We Help \nBusinesses",
-  "products.list.learnMore": "Learn More"
+  "products.list.learnMore": "Learn More",
+  "benefits.title.firstPart": "Gain Faster",
+  "benefits.title.secondPart": "Business Growth",
+  "benefits.list.delightedCustomers.title": "Delight customers",
+  "benefits.list.delightedCustomers.description": "Fewer complaints, more referral business, no more headaches",
+  "benefits.list.eliminateDefects.title": "Eliminate Defects",
+  "benefits.list.eliminateDefects.description": "Do it right every time. No excuses",
+  "benefits.list.reduceCosts.title": "Reduce costs",
+  "benefits.list.reduceCosts.description": "Faster work. Less mistakes, fewer repairs and callbacks",
+  "benefits.list.achieveCompliance.title": "Achieve total compliance",
+  "benefits.list.achieveCompliance.description": "Comply with safety and environmental law. Have relevant legislation at your fingertips",
+  "benefits.description.button.bookDemo": "Book A Demo"
 }

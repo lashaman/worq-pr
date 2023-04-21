@@ -1,5 +1,4 @@
 import {
-	Box,
 	Button,
 	Card,
 	CardActions,
@@ -13,17 +12,8 @@ import Colors from '../config/colors';
 import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {Product} from '../interfaces/product.interface';
+import IconBox from './icon-box.component';
 
-const ProductIcon = styled(Box)`
-  width: 82px;
-  height: 82px;
-  background-color: ${Colors.purpleLighter};
-	margin-right: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const ProductTitle = styled(Typography)`
 	font-size: 1.66rem;
@@ -35,11 +25,12 @@ const ProductCustomCard = styled(Card)`
 	width: 100%;
 	height: 288px;
 	border-radius: 30px;
-  box-shadow: -3px 42px 25px rgba(41, 0, 102, 0.01), -1px 19px 19px rgba(41, 0, 102, 0.02), 0px 5px 10px rgba(41, 0, 102, 0.02), 0px 0px 0px rgba(41, 0, 102, 0.02);
+  box-shadow: -3px 42px 25px rgba(41, 0, 102, 0.01), -1px 19px 19px rgba(41, 0, 102, 0.02), 0 5px 10px rgba(41, 0, 102, 0.02), 0 0 0 rgba(41, 0, 102, 0.02);
 	background-color: ${Colors.white};
 `;
 
 const ProductCardHeader = styled(CardHeader)`
+	width: 100%;
 	padding-bottom: 20px;
 `;
 
@@ -92,14 +83,14 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 			<Grid
 				container
 				direction="column"
-				justifyContent="space-between"
+				justifyContent="start"
 				alignItems="center"
 			>
 				<ProductCardHeader
 					avatar={
-						<ProductIcon>
+						<IconBox width="82px" height="82px">
 							<img src={icon} alt="O"/>
-						</ProductIcon>
+						</IconBox>
 					}
 					title={
 						<ProductTitle variant="h3" >

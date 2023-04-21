@@ -13,5 +13,5 @@ export const CustomContainer = styled(Container)`
 	@media (min-width: 1280px) {
   	max-width: 1280px;
 	}
-	`;
+`;
 
