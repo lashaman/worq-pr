@@ -10,6 +10,7 @@ import PiggyBank from '../assets/icons/piggy-bank.svg';
 import BadgeCheck from '../assets/icons/badge-check.svg';
 import BenefitsCard from '../atoms/benefits-card';
 import {MainButton} from '../atoms/common-button.component';
+import {Trans} from 'react-i18next';
 
 
 const BenefitsImageBox = styled(Box)`
@@ -42,6 +43,10 @@ const BenefitsTitle = styled(Typography)`
   display: flex;
   font-size: 2.2rem;
   font-weight: 700;
+	& > span {
+		color: ${Colors.black};
+		margin-left: 10px;
+  }
 `;
 
 const DescriptionBox = styled(Box)`
@@ -87,10 +92,10 @@ const Benefits = () => {
 				<Box height="650px">
 					<DescriptionBox>
 						<BenefitsTitle variant="h3" color={Colors.purple}>
-							{t('benefits.title.firstPart')}
-						</BenefitsTitle>
-						<BenefitsTitle variant="h3" color={Colors.black} sx={{paddingLeft: '0.3em'}}>
-							{t('benefits.title.secondPart')}
+							<Trans
+								i18nKey="benefits.title"
+								components={{ span: <span />}}
+							/>
 						</BenefitsTitle>
 					</DescriptionBox>
 

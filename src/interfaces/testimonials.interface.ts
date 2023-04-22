@@ -1,5 +1,7 @@
+import React from 'react';
+
 export interface TestimonialsInterface {
-	description: string;
+	description: React.ReactNode;
 	companyIcon: string;
 	companyRepresentative: string;
 	companyRepresentativePosition: string;

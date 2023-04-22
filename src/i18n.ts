@@ -11,6 +11,9 @@ i18next.use(initReactI18next).init({
 	},
 	lng: 'en',
 	returnNull: false,
+	interpolation: {
+		escapeValue: false
+	}
 });
 
 export default i18next;

@@ -23,6 +23,13 @@ const TestimonialsCardActions = styled(CardActions)`
 	border-top: 1px solid ${Colors.purpleLight};
 `;
 
+const TestimonialDescription = styled(Typography)`
+	font-size: 1.05rem;
+	&  span {
+		font-weight: 900;
+	}
+`;
+
 type TestimonialsCardProps = TestimonialsInterface;
 
 const TestimonialsCard = ({
@@ -34,9 +41,9 @@ const TestimonialsCard = ({
 	return (
 		<TestimonialsCustomCard>
 			<TestimonialsCardContent>
-				<Typography variant="h6" >
+				<TestimonialDescription variant="subtitle1" >
 					{description}
-				</Typography>
+				</TestimonialDescription>
 			</TestimonialsCardContent>
 			<TestimonialsCardActions>
 				<Box sx={{marginRight: '20px'}}>

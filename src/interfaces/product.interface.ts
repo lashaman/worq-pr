@@ -1,7 +1,9 @@
+import React from 'react';
+
 export interface Product {
 	id: number;
 	title: string;
-	description: string;
+	description: React.ReactNode;
 	icon: string;
 	buttonText: string;
 }
