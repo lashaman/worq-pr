@@ -1,4 +1,5 @@
 {
+  "bookDemo.title": "Book a demo",
   "header.menu.item1": "Products",
   "header.menu.item2": "Services",
   "header.menu.item3": "Solutions",
@@ -38,7 +39,6 @@
   "benefits.list.reduceCosts.description": "Faster work. Less mistakes, fewer repairs and callbacks",
   "benefits.list.achieveCompliance.title": "Achieve total compliance",
   "benefits.list.achieveCompliance.description": "Comply with safety and environmental law. Have relevant legislation at your fingertips",
-  "benefits.description.button.bookDemo": "Book A Demo",
   "testimonials.title": "What customers say <span> about WORQ</span>",
   "testimonials.subtitle": "find out what people who have \ntrusted us say about us",
   "testimonials.first.description": "<p><span>An extremely flexible product </span> to which we have been able to apply to any task we can think of to date. Critically, it's super easy to use in the field on our phones and tablets, being intuitive and requiring minimal interactions.\nI encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.</p><p>I encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.</p>",
@@ -46,5 +46,6 @@
   "testimonials.first.companyRepresentative.position": "Chief Executive Officer",
   "testimonials.second.description": "<p>An extremely flexible product to which we have been able to apply to any task we can think of to date. Critically, <span> it's super easy to use </span> in the field on our phones and tablets, being intuitive and requiring minimal interactions.\nI encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.</p><p>I encourage any agency or company, with workers who build, repair or install anything, to consider WORQ to assist in improving their operations.</p>",
   "testimonials.second.companyRepresentative.name": "Matt Hornby",
-  "testimonials.second.companyRepresentative.position": "Operations Specialist"
+  "testimonials.second.companyRepresentative.position": "Operations Specialist",
+  "footer.contactUs.follow.title": "Follow Us"
 }

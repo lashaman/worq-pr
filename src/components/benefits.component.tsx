@@ -103,7 +103,7 @@ const Benefits = () => {
 						(Benefit, index) => <BenefitsCard key={index} {...Benefit} />
 					)}
 
-					<MainButton size="small">{t('benefits.description.button.bookDemo')}</MainButton>
+					<MainButton size="small">{t('bookDemo.title')}</MainButton>
 				</Box>
 			</Grid>
 		</BenefitsGrid>
