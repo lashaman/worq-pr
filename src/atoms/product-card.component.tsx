@@ -43,6 +43,9 @@ const ProductCardContent = styled(CardContent)`
 const ProductDescription = styled(Typography)`
 	font-size: 1rem;
 	color: ${Colors.black};
+	& > span {
+		font-weight: 900;
+  }
 `;
 
 const ProductCardActions = styled(CardActions)`
@@ -72,7 +75,6 @@ const ProductCardButton = styled(Button)`
   }
 `;
 
-
 interface ProductCardProps extends Product {
 	handler: (id: number) => void;
 }
@@ -99,7 +101,7 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 					}
 				/>
 				<ProductCardContent>
-					<ProductDescription variant="h6" >
+					<ProductDescription variant="subtitle1" >
 						{description}
 					</ProductDescription>
 				</ProductCardContent>

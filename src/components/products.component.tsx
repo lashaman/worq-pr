@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import ProductCard from '../atoms/product-card.component';
-import {useTranslation} from 'react-i18next';
+import {Trans, useTranslation} from 'react-i18next';
 import HowWeHelp from '../assets/images/how-we-help.png';
 import CrownIcon from '../assets/icons/crown.svg';
 import BadgeCheckIcon from '../assets/icons/badge-check.svg';
@@ -59,49 +59,49 @@ const ProductsComponent = () => {
 		{
 			id: 0,
 			title: t('products.workQuality.title'),
-			description: t('products.workQuality.description'),
+			description: <Trans i18nKey="products.workQuality.description" components={{span: <span />}}/>,
 			icon: CrownIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 1,
 			title: t('products.organizeKnowledge.title'),
-			description: t('products.organizeKnowledge.description'),
+			description: <Trans i18nKey="products.organizeKnowledge.description" components={{span: <span />}}/>,
 			icon: ListCheckIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 2 ,
 			title: t('products.registersInformation.title'),
-			description: t('products.registersInformation.description'),
+			description: <Trans i18nKey="products.registersInformation.description" components={{span: <span />}}/>,
 			icon: BooksIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 3,
 			title: t('products.bestSecurity.title'),
-			description: t('products.bestSecurity.description'),
+			description: <Trans i18nKey="products.bestSecurity.description" components={{span: <span />}}/>,
 			icon: ShieldCheckIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 4 ,
 			title: t('products.bestWork.title'),
-			description: t('products.bestWork.description'),
+			description: <Trans i18nKey="products.bestWork.description" components={{span: <span />}}/>,
 			icon: BadgeCheckIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 5,
 			title: t('products.familiarTools.title'),
-			description: t('products.familiarTools.description'),
+			description: <Trans i18nKey="products.familiarTools.description" components={{span: <span />}}/>,
 			icon: SparklesIcon,
 			buttonText: t('products.workQuality.button'),
 		},
 		{
 			id: 6,
 			title: t('products.create.improve.title'),
-			description: t('products.create.improve.description'),
+			description: <Trans i18nKey="products.familiarTools.description" components={{span: <span />}}/>,
 			icon: SelectIcon,
 			buttonText: t('products.workQuality.button'),
 		}
