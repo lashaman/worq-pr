@@ -1,8 +1,8 @@
 import React from 'react';
-import {Box, Card, Collapse, Container, Fade, Grid, styled, Typography} from '@mui/material';
+import {Box, Container, Fade, Grid, styled, Typography} from '@mui/material';
 import {Trans} from 'react-i18next';
 import Colors from '../config/colors';
-import {MainButton, SecondaryButton} from '../atoms/common-button.component';
+import {MainButton} from '../atoms/common-button.component';
 import ServicesStepper from '../atoms/services-stepper.component';
 
 const ServicesContainer = styled(Container)`
