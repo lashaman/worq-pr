@@ -15,32 +15,30 @@ import AppBar from '@mui/material/AppBar';
 const pages = ['header.menu.item1', 'header.menu.item2', 'header.menu.item3', 'header.menu.item4'];
 
 export const HeaderButton = styled(Button)`
-    color: ${Colors.black};
-		padding-left: 25px;
-		padding-right: 25px;
-    font-size: 18px;
-		`;
+  color: ${Colors.black};
+`;
 
 export const HeaderBox = styled(Box)`
-		flex-grow: 1;
-		display: flex;
-		margin: 0 auto;
-		align-items: center;
-		justify-content: center;
-  	padding: 10px ;
-		`;
+	flex-grow: 1;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	padding: 0.625rem;
+`;
 
 export const HeaderToolbar = styled(Toolbar)`
-		height: 100%;
-		padding: 0;
-		`;
+	height: 100%;
+	padding: 0;
+`;
 
 export const HeaderAppBar = styled(AppBar)`
 	position: static;
 	box-shadow: none;
 	background-color: ${Colors.white};
-  height: 100px;
-	`;
+  height: 6.25rem;
+`;
+
 
 
 
@@ -50,12 +48,20 @@ const Header = () => {
 		<HeaderAppBar >
 			<CustomContainer>
 				<HeaderToolbar disableGutters>
-					<img src={LogoMain} alt="LOGO" />
+					<Box component="img" src={LogoMain} alt="LOGO" sx={{
+						width: {xs: '99.8px', sm: '149.7px', lg: '199.61px'},
+					}} />
 					<HeaderBox>
 						{pages.map((page) => (
 							<HeaderButton
 								key={page}
-								endIcon={<KeyboardArrowDownIcon />}>
+								endIcon={<KeyboardArrowDownIcon />}
+								sx={{
+									fontSize: {xs: '15px', sm: '16px', lg: '18px'},
+									paddingLeft: {xs: '10px', lg: '25px'},
+									paddingRight: {xs: '10px', lg: '25px'},
+								}}
+							>
 								{t(page)}
 							</HeaderButton>
 						))}

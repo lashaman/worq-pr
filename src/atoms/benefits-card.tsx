@@ -10,7 +10,6 @@ const BenefitsCustomCard = styled(Card)`
 	width: 100%;
 	border: 0;
 	box-shadow: none;
-	min-height: 105px;
 	padding: 0 0 0 0;
 `;
 
@@ -38,7 +37,8 @@ const BenefitsHeaderIcon = styled(Box)`
 
 const BenefitsCard = ({icon,title, description}: CustomCardProps) => {
 	return (
-		<BenefitsCustomCard>
+		<BenefitsCustomCard sx={{
+			minHeight: {md: '90px', lg: '105px'}}}>
 			<Grid
 				container
 				direction="row"
@@ -50,12 +50,14 @@ const BenefitsCard = ({icon,title, description}: CustomCardProps) => {
 						<img src={icon} alt="O"/>
 					</BenefitsHeaderIcon>
 				</Grid>
-				<Grid item xs={10}>
+				<Grid item xs={10} sx={{paddingLeft: {sm: '26px', lg: '0'}}}>
 					<BenefitsCardContent>
 						<Typography variant="h6" >
 							{title}
 						</Typography>
-						<Typography variant="body1" fontSize="1.25rem" >
+						<Typography variant="body1" sx={{
+							fontSize: {sm: '12px', md: '14px', lg: '20px'}
+						}}>
 							{description}
 						</Typography>
 					</BenefitsCardContent>

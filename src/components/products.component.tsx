@@ -18,18 +18,17 @@ import {Product} from '../interfaces/product.interface';
 
 const ProductsContainer = styled(Container)`
   height: 130vh;
+	max-width: 1280px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding-left: 0;
 	padding-right: 0;
-  border-top: 1px solid ${Colors.purple};
-  border-bottom: 1px solid ${Colors.purple};
 `;
 
 const ProductsGrid = styled(Grid)`
-	max-width: 1300px;
+	max-width: 100%;
 	padding: 63px 0;
 	display: flex;
 	flex-direction: row;
@@ -59,7 +58,6 @@ const ProductImageTitle = styled(Typography)`
 	align-items: center;
 	text-align: center;
 	justify-content: end;
-	font-size: 3rem;
 	font-weight: 900;
 	white-space: pre;
 	color: ${Colors.purpleDark};
@@ -123,22 +121,26 @@ const ProductsComponent = () => {
 		console.log(id);
 	};
 	return (
-		<ProductsContainer maxWidth={false}>
-			<ProductsGrid container spacing={2.5}>
-				<Grid item xs={8}>
-					<ProductImage>
-						<ProductImageTitle>
-							{t('products.productImage.title')}
-						</ProductImageTitle>
-					</ProductImage>
-				</Grid>
-				{Products.map((product) => (
-					<Grid item xs={4} key={product.id}>
-						<ProductCard {...product} handler={ProductCardClickHandler} />
+		<>
+			<hr style={{borderTop: `1px solid ${Colors.purple}`}}/>
+			<ProductsContainer maxWidth={false}>
+				<ProductsGrid container spacing={2.5}>
+					<Grid item xs={8}>
+						<ProductImage>
+							<ProductImageTitle sx={{fontSize: {md: '40px', lg:'48px'}}}>
+								{t('products.productImage.title')}
+							</ProductImageTitle>
+						</ProductImage>
 					</Grid>
-				))}
-			</ProductsGrid>
-		</ProductsContainer>
+					{Products.map((product) => (
+						<Grid item xs={4} key={product.id}>
+							<ProductCard {...product} handler={ProductCardClickHandler} />
+						</Grid>
+					))}
+				</ProductsGrid>
+			</ProductsContainer>
+			<hr style={{borderTop: `1px solid ${Colors.purple}`}}/>
+		</>
 	);
 };
 

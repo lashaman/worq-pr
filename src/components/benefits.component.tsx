@@ -1,4 +1,4 @@
-import {Box, Grid, styled, Typography} from '@mui/material';
+import {Box, Container, Grid, styled, Typography} from '@mui/material';
 import React from 'react';
 import {t} from 'i18next';
 import BenefitsBg from '../assets/images/benefits-bg.png';
@@ -15,7 +15,6 @@ import {Trans} from 'react-i18next';
 
 const BenefitsImageBox = styled(Box)`
   width: 100%;
-  height: 650px;
   background-image: url(${BenefitsBg});
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,8 +23,6 @@ const BenefitsImageBox = styled(Box)`
 `;
 
 const BenefitsGrid = styled(Grid)`
-  width: 1280px;
-  padding: 63px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -40,7 +37,6 @@ const BenefitsGrid = styled(Grid)`
 
 const BenefitsTitle = styled(Typography)`
   display: flex;
-  font-size: 2.2rem;
   font-weight: 700;
 	& > span {
 		color: ${Colors.black};
@@ -82,30 +78,36 @@ const Benefits = () => {
 	];
 
 	return (
-		<BenefitsGrid container spacing={0} sx={{width: '1280px'}}>
-			<Grid item xs={6}>
-				<BenefitsImageBox>
-				</BenefitsImageBox>
-			</Grid>
-			<Grid item xs={6}>
-				<Box height="650px">
-					<DescriptionBox>
-						<BenefitsTitle variant="h3" color={Colors.purple}>
-							<Trans
-								i18nKey="benefits.title"
-								components={{ span: <span />}}
-							/>
-						</BenefitsTitle>
-					</DescriptionBox>
+		<Container maxWidth="lg" sx={{padding: '63px 0'}}>
+			<BenefitsGrid container spacing={0}>
+				<Grid item xs={6}>
+					<BenefitsImageBox sx={{
+						height: {sm: '250px', md: '467px', lg: '650px'}
+					}}>
+					</BenefitsImageBox>
+				</Grid>
+				<Grid item xs={6}>
+					<Box sx={{height: {md: '530px', lg: '628px'}}}>
+						<DescriptionBox>
+							<BenefitsTitle variant="h3" color={Colors.purple} sx={{
+								fontSize: {sm: '20px', md: '24px', lg: '36px'}
+							}}>
+								<Trans
+									i18nKey="benefits.title"
+									components={{ span: <span />}}
+								/>
+							</BenefitsTitle>
+						</DescriptionBox>
 
-					{BenefitsList.map(
-						(Benefit, index) => <BenefitsCard key={index} {...Benefit} />
-					)}
+						{BenefitsList.map(
+							(Benefit, index) => <BenefitsCard key={index} {...Benefit} />
+						)}
 
-					<MainButton size="small">{t('bookDemo.title')}</MainButton>
-				</Box>
-			</Grid>
-		</BenefitsGrid>
+						<MainButton size="small">{t('bookDemo.title')}</MainButton>
+					</Box>
+				</Grid>
+			</BenefitsGrid>
+		</Container>
 	);
 };
 

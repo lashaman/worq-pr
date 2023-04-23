@@ -8,12 +8,17 @@ export const MainButton = styled(Button)`
 	color: ${Colors.purpleLighter};
 	border-radius: 9999px;
 	padding: 12px 40px;
-	font-size: 17px;
 	&:hover, &:focus, &:active {
     background-color: ${Colors.purple};
     color: ${Colors.purpleLighter};
 		opacity: 0.8;
 	},
+	@media (min-width: 900px) {
+		font-size: 16px;
+	},
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
 `;
 
 export const SecondaryButton = styled(Button)`
@@ -21,11 +26,16 @@ export const SecondaryButton = styled(Button)`
 	color: ${Colors.purple};
 	border-radius: 9999px;
 	padding: 12px 40px;
-	font-size: 17px;
 	&:hover, &:focus, &:active {	
 		background-color: ${Colors.purpleLighter};
     color: ${Colors.purple};
 		opacity: 0.8;
 	},
+	@media (min-width: 900px) {
+		font-size: 16px;
+	},
+	@media (min-width: 1200px) {
+		font-size: 18px;
+	}
 `;
 

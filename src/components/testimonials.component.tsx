@@ -16,7 +16,6 @@ import 'swiper/css';
 const TestimonialsContainer = styled(Container)`
 	display: flex;
 	width: 100%;
-	height: 822px;
 	background-color: ${Colors.purpleLighter};
 	flex-direction: column;
 	justify-content: center;
@@ -37,7 +36,6 @@ const TestimonialsBox = styled(Box)`
 
 const TestimonialsTitle = styled(Typography)`
 	display: flex;
-	font-size: 2.2rem;
 	font-weight: 700;
 	& > span {
 		color: ${Colors.purple};
@@ -47,7 +45,7 @@ const TestimonialsTitle = styled(Typography)`
 
 const TestimonialsSubTitle = styled(Typography)`
 	display: flex;
-	width: 30%;
+	width: 325px;
 	white-space: pre-wrap;
 	padding: 30px 0;
 	margin-bottom: 40px;
@@ -102,11 +100,13 @@ const Testimonials = () => {
 	};
 
 	return (
-		<TestimonialsContainer maxWidth={false}>
+		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}}}>
 			<TestimonialsBox>
 				<Grid container>
 					<Grid item xs={12}>
-						<TestimonialsTitle variant={'h2'}>
+						<TestimonialsTitle variant={'h2'} sx={{
+							fontSize: {md: '28px', lg: '36px'},
+						}}>
 							<Trans
 								i18nKey="testimonials.title"
 								components={{ span: <span />}}
@@ -115,7 +115,7 @@ const Testimonials = () => {
 					</Grid>
 					<Grid item container xs={12}>
 						<Grid item xs={10}>
-							<TestimonialsSubTitle variant={'h2'}>
+							<TestimonialsSubTitle variant={'h2'} >
 								{t('testimonials.subtitle')}
 							</TestimonialsSubTitle>
 						</Grid>
@@ -129,11 +129,23 @@ const Testimonials = () => {
 						</TestimonialsControlsGrid>
 					</Grid>
 				</Grid>
-				<Grid container className="swiper-container" spacing={3}>
+				<Grid container className="swiper-container" >
 					<Swiper
 						modules={[Navigation, Pagination, Virtual]}
 						spaceBetween={20}
-						slidesPerView={2}
+						breakpoints={{
+							// when window width is >= 640px
+							1024: {
+								width: 959,
+								slidesPerView: 1,
+								spaceBetween: 30,
+							},
+							1280: {
+								width: 1280,
+								slidesPerView: 2,
+								spaceBetween: 20,
+							},
+						}}
 						navigation={{
 							prevEl: '.prev-button',
 							nextEl: '.next-button'

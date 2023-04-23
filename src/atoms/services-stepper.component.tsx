@@ -91,6 +91,9 @@ const ServicesStepper = ( { changeStep}: ServicesStepperProps) => {
 					<SvgRect x="90" y="570" width="325" height="55" rx="27.5" fill={activeStep === ActiveStep.Risk ? Colors.purple : Colors.purpleLighter} />
 					<SvgText x="180" y="602" fill={activeStep === ActiveStep.Risk ? Colors.purpleLighter : Colors.black } fontSize="18" fontWeight="bold">Risk Management</SvgText>
 				</SvgGroup>
+				<path fillRule="evenodd" clipRule="evenodd" d="M608.479 352.711L556.723 300.944L581.025 276.641L621.226 316.844L608.479 352.711Z" fill="#3F25F2"/>
+				<path fillRule="evenodd" clipRule="evenodd" d="M622.738 312.846L611.232 301.341L638 274.573L622.738 312.846Z" fill="#160AB4"/>
+				<path fillRule="evenodd" clipRule="evenodd" d="M554.366 352.711L524.874 274.573L550.559 300.279L578.678 328.397L554.366 352.711Z" fill="#A39EF8"/>
 			</g>
 		</svg>
 	);

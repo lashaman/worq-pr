@@ -26,7 +26,6 @@ const FooterContainer = styled(Container)`
 
 const CopyRightBox = styled(Box)`
   width: 100%;
-	height: 5em;
 	background-color: ${Colors.purple};
 	display: flex;
 	align-items: center;
@@ -48,7 +47,6 @@ const SocialBox = styled(Box)`
 `;
 
 const FollowUsTitle = styled(Typography)`
-	font-weight: 900;
 	margin-top: 2px;
 	display: flex;
 	align-items: center;
@@ -100,16 +98,16 @@ const Footer = () => {
 	};
 
 	return (
-		<FooterContainer maxWidth={false} >
+		<FooterContainer maxWidth={false}>
 			<Box
 				sx={{
 					py: 3,
 					color: 'black',
-					maxWidth: '1280px',
+					maxWidth: {sm: '600px', md: '924px', lg: '1280px'},
 					display: 'flex',
 					flexDirection: 'column',
 					justifyContent: 'center',
-					height: '580px',
+					height: {md: '444px', lg: '580px'},
 					margin: '0 auto',
 				}}
 			>
@@ -117,7 +115,7 @@ const Footer = () => {
 					<Grid item xs={6} spacing={2}>
 						<Box component="img" src={LogoFooter} alt="Logo" sx={{borderBottom: `1px solid ${Colors.purple}`, paddingBottom: '1.25em'}}/>
 						<SocialBox mt={1}>
-							<FollowUsTitle variant="subtitle1" >
+							<FollowUsTitle variant="subtitle1"  sx={{md: '18px', lg: '20px'}}>
 								{contactUsSection.title}
 							</FollowUsTitle>
 							<IconButton color="inherit">
@@ -131,38 +129,38 @@ const Footer = () => {
 							</IconButton>
 						</SocialBox>
 						<Box mt={1}>
-							<Typography variant="h6" fontSize="1.13rem" color={Colors.black}>
+							<Typography variant="h6" fontSize="1.13rem" color={Colors.black} sx={{md: '16px', lg: '18px'}}>
 								{contactUsSection.email}
 							</Typography>
-							<PhoneButton startIcon={<FatPhone />} >{contactUsSection.phone}</PhoneButton>
+							<PhoneButton startIcon={<FatPhone />} sx={{md: '20px', lg: '22px'}}>{contactUsSection.phone}</PhoneButton>
 						</Box>
 						<Box mt={1}>
 							<MainButton>{t('bookDemo.title')}</MainButton>
 						</Box>
 					</Grid>
 					<Grid item xs={6} >
-						<Typography variant="h6" fontWeight="bold">
+						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}}}>
 							{FooterColumns.services.title}
 						</Typography>
 						<List>
 							{FooterColumns.services.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
 									<Link href="#" color="inherit" underline="hover">
-										<Typography variant="h6" fontSize="1.13rem">{item}</Typography>
+										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 									</Link>
 								</ListItem>
 							))}
 						</List>
 					</Grid>
 					<Grid item xs={3} >
-						<Typography variant="h6" fontWeight="bold">
+						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}}}>
 							{FooterColumns.product.title}
 						</Typography>
 						<List>
 							{FooterColumns.product.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
 									<Link href="#" color="inherit" underline="hover">
-										<Typography variant="h6" fontSize="1.13rem">{item}</Typography>
+										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 									</Link>
 								</ListItem>
 							))}
@@ -170,7 +168,7 @@ const Footer = () => {
 					</Grid>
 					<Grid item xs={3} >
 						<Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
-							<Typography variant="h6" fontWeight="bold" sx={{paddingRight: '1.3rem'}} >
+							<Typography variant="h6" fontWeight="bold" sx={{paddingRight: '1.3rem', fontSize: {md: '18px', lg: '20px'}}} >
 								{FooterColumns.about.title}
 							</Typography>
 						</Box>
@@ -179,7 +177,7 @@ const Footer = () => {
 								{FooterColumns.about.items.map((item, i) => (
 									<ListItem key={i} disableGutters>
 										<Link href="#" color="inherit" underline="hover">
-											<Typography variant="h6" fontSize="1.13rem" >{item}</Typography>
+											<Typography variant="subtitle1" fontSize="1.13rem"  sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 										</Link>
 									</ListItem>
 								))}
@@ -188,17 +186,17 @@ const Footer = () => {
 					</Grid>
 				</Grid>
 			</Box>
-			<CopyRightBox>
+			<CopyRightBox sx={{height: {md: '60px', lg: '80px'}}}>
 				<Grid container >
 					<Grid item xs={4}>
 					</Grid>
 					<Grid item xs={4}>
-						<Typography variant="h6" fontSize="1.13rem" color={Colors.white} textAlign="center">
+						<Typography variant="h6" fontSize="16px" color={Colors.white} textAlign="center">
 					© 2021 Worq Pty Ltd. All rights reserved.
 						</Typography>
 					</Grid>
 					<Grid item xs={4}>
-						<Typography variant="h6" fontSize="1.13rem" color={Colors.white} textAlign="center">
+						<Typography variant="h6" fontSize="14px" color={Colors.white} textAlign="center">
 					Privacy Policy
 						</Typography>
 					</Grid>

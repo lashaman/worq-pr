@@ -95,13 +95,13 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 						</IconBox>
 					}
 					title={
-						<ProductTitle variant="h3" >
+						<ProductTitle variant="h3" sx={{fontSize: {md: '18px', lg:'31px'}}}>
 							{title}
 						</ProductTitle>
 					}
 				/>
 				<ProductCardContent>
-					<ProductDescription variant="subtitle1" >
+					<ProductDescription variant="subtitle1" sx={{fontSize: {md: '14px', lg:'18px'}}}>
 						{description}
 					</ProductDescription>
 				</ProductCardContent>

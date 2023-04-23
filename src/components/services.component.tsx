@@ -7,11 +7,23 @@ import ServicesStepper from '../atoms/services-stepper.component';
 
 const ServicesContainer = styled(Container)`
   width: 100%;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  @media (min-width: 600px) {  
+		padding-left: 0;
+    padding-right: 0;
+  }
+	@media (min-width: 960px) {
+		height: 880px;
+  }
+	@media (min-width: 1280px) {
+		height: 1083px;
+  }
 `;
 
 const ServicesGrid = styled(Grid)`
-	width: 1280px;
 	padding: 63px 0;
 	display: flex;
 	flex-direction: row;
@@ -40,11 +52,32 @@ const ServicesDescriptionTitle = styled(Typography)`
 `;
 
 const ServicesDescription = styled(Typography)`
-	font-size: 1.25rem;
 	color: ${Colors.black};
 	padding-bottom: 20px;
 	& > span {
 		font-weight: 900;
+  }
+`;
+
+const StepperBox = styled(Box)`
+	@media (min-width: 600px) {
+		transform: scale(0.7);
+    & > svg {
+      max-width: 100%;
+    }
+  }
+	@media (min-width: 960px) {
+		transform: scale(0.89);
+    & > svg {
+      max-width: 121%;
+    }
+  }
+	
+	@media (min-width: 1280px) {
+		transform: scale(1);
+		& > svg {
+			max-width: 110%;
+    }
   }
 `;
 
@@ -86,7 +119,9 @@ const Services = () => {
 	};
 	return (
 		<ServicesContainer maxWidth={false}>
-			<ServicesGrid container spacing={3} >
+			<ServicesGrid container sx={{
+				width: {xs: '100%', lg: '1280px'},
+			}}>
 				<Grid item xs={12}>
 					<ServicesTitle variant="h3"  gutterBottom>
 						<Trans
@@ -95,19 +130,25 @@ const Services = () => {
 						/>
 					</ServicesTitle>
 				</Grid>
-				<Grid item xs={6} >
-					<ServicesStepper changeStep={handleChange}/>
+				<Grid item xs={7} lg={6}>
+					<StepperBox>
+						<ServicesStepper changeStep={handleChange}/>
+					</StepperBox>
 				</Grid>
-				<Grid item xs={6} >
+				<Grid item xs={5} lg={6}>
 					<TabPanel value={value} index={0}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
+						<ServicesDescriptionTitle  sx={{
+							fontSize: {xs: '12px', sm: '20px', md: '28px', lg: '36px'},
+						}} variant="h4" gutterBottom>
 							<Trans
 								i18nKey="services.description.title"
 								components={{ span: <span />}}
 							/>
 							Tab 1
 						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
+						<ServicesDescription variant="body1" sx={{
+							fontSize: {xs: '12px', sm: '14px', md: '16px', lg: '20px'},
+						}} gutterBottom>
 							<Trans
 								i18nKey="services.description.text"
 								components={{ span: <span />}}

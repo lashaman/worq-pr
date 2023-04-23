@@ -24,11 +24,9 @@ const ServiceBox = styled(Box)`
   width: 100%;
   max-width: 1280px;
   align-items: center;
-  padding: 100px 0 100px 0;
 `;
 
 const ServiceTitle = styled(Typography)`
-  font-size: 3rem;
   text-align: left;
   color: ${Colors.purple};
   font-weight: 700;
@@ -54,16 +52,22 @@ const clients = [
 const Clients = () => {
 	return (
 		<ClientsContainer maxWidth={false}>
-			<ServiceBox>
+			<ServiceBox sx={{
+				padding: {md: '30px 0 30px 0', lg: '100px 0 100px 0'},
+			}}>
 				<Grid container spacing={4} sx={{width: '100%'}}>
 					<Grid item xs={4}>
-						<ServiceTitle variant="h3">
+						<ServiceTitle variant="h3" sx={{
+							fontSize: {md: '30px' , lg: '48px'},
+						}}>
 							{t('clients.title')}
 						</ServiceTitle>
 					</Grid>
 					<ImgGrid item xs={8}>
 						{clients.map((client) => (
-							<img src={client} key={client} alt="client" />
+							<Box component="img" src={client} key={client} alt="client" sx={{
+								width: {xs: '100px', md: '108.67px', lg: '133.33px'},
+							}} />
 						))}
 					</ImgGrid>
 				</Grid>
