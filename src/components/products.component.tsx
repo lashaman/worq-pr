@@ -1,5 +1,5 @@
 import {
-	Box,
+	Box, Container,
 	Grid, styled, Typography,
 } from '@mui/material';
 import React from 'react';
@@ -15,6 +15,18 @@ import SparklesIcon from '../assets/icons/sparkles.svg';
 import BooksIcon from '../assets/icons/books.svg';
 import Colors from '../config/colors';
 import {Product} from '../interfaces/product.interface';
+
+const ProductsContainer = styled(Container)`
+  height: 130vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0;
+	padding-right: 0;
+  border-top: 1px solid ${Colors.purple};
+  border-bottom: 1px solid ${Colors.purple};
+`;
 
 const ProductsGrid = styled(Grid)`
 	max-width: 1300px;
@@ -111,20 +123,22 @@ const ProductsComponent = () => {
 		console.log(id);
 	};
 	return (
-		<ProductsGrid container spacing={2.5}>
-			<Grid item xs={8}>
-				<ProductImage>
-					<ProductImageTitle>
-						{t('products.productImage.title')}
-					</ProductImageTitle>
-				</ProductImage>
-			</Grid>
-			{Products.map((product) => (
-				<Grid item xs={4} key={product.id}>
-					<ProductCard {...product} handler={ProductCardClickHandler} />
+		<ProductsContainer maxWidth={false}>
+			<ProductsGrid container spacing={2.5}>
+				<Grid item xs={8}>
+					<ProductImage>
+						<ProductImageTitle>
+							{t('products.productImage.title')}
+						</ProductImageTitle>
+					</ProductImage>
 				</Grid>
-			))}
-		</ProductsGrid>
+				{Products.map((product) => (
+					<Grid item xs={4} key={product.id}>
+						<ProductCard {...product} handler={ProductCardClickHandler} />
+					</Grid>
+				))}
+			</ProductsGrid>
+		</ProductsContainer>
 	);
 };
 

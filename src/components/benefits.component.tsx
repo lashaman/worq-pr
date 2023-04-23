@@ -31,7 +31,6 @@ const BenefitsGrid = styled(Grid)`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-
   & > .MuiGrid-item {
     &:nth-child(2) {
       padding-left: 4.810em;
