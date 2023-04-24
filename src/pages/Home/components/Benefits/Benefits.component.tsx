@@ -33,6 +33,12 @@ const BenefitsGrid = styled(Grid)`
       padding-left: 4.810em;
     }
   }
+	@media (min-width: 600px) {
+    flex-direction: row-reverse;
+  }
+	@media (min-width: 1200px) {
+		flex-direction: row;
+  }
 `;
 
 const BenefitsTitle = styled(Typography)`
