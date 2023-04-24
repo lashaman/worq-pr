@@ -15,6 +15,8 @@ import AppBar from '@mui/material/AppBar';
 const pages = ['header.menu.item1', 'header.menu.item2', 'header.menu.item3', 'header.menu.item4'];
 
 export const HeaderButton = styled(Button)`
+	font-family: 'Avenir Heavy';
+	text-transform: none;
   color: ${Colors.black};
 `;
 

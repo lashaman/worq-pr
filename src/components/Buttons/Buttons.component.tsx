@@ -7,6 +7,8 @@ export const MainButton = styled(Button)`
 	background-color: ${Colors.purple};
 	color: ${Colors.purpleLighter};
 	border-radius: 9999px;
+	font-family: 'Avenir black';
+  text-transform: none;
 	padding: 12px 40px;
 	&:hover, &:focus, &:active {
     background-color: ${Colors.purple};
@@ -26,6 +28,8 @@ export const SecondaryButton = styled(Button)`
 	color: ${Colors.purple};
 	border-radius: 9999px;
 	padding: 12px 40px;
+  font-family: 'Avenir black';
+  text-transform: none;
 	&:hover, &:focus, &:active {	
 		background-color: ${Colors.purpleLighter};
     color: ${Colors.purple};

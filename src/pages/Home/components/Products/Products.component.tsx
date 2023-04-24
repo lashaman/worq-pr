@@ -52,6 +52,7 @@ const ProductImage = styled(Box)`
 `;
 
 const ProductImageTitle = styled(Typography)`
+  font-family: 'Avenir Black';
 	display: flex;
 	height: 100%;
 	padding: 0 100px;

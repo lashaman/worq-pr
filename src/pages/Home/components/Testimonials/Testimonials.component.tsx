@@ -37,6 +37,7 @@ const TestimonialsBox = styled(Box)`
 const TestimonialsTitle = styled(Typography)`
 	display: flex;
 	font-weight: 700;
+	font-family: 'Avenir black';
 	& > span {
 		color: ${Colors.purple};
 		margin-left: 10px;
@@ -44,14 +45,16 @@ const TestimonialsTitle = styled(Typography)`
 `;
 
 const TestimonialsSubTitle = styled(Typography)`
-	display: flex;
 	width: 325px;
+	font-family: 'Poppins Medium';
 	white-space: pre-wrap;
 	padding: 30px 0;
 	margin-bottom: 40px;
 	border-bottom: 1px solid ${Colors.purple};
-  flex: 1;
-	font-size: 1.5rem;
+	font-size: 20px;
+	& > span {
+		font-family: 'Poppins Bold';
+  }
 `;
 
 const TestimonialsControlsGrid = styled(Grid)`
@@ -116,7 +119,10 @@ const Testimonials = () => {
 					<Grid item container xs={12}>
 						<Grid item xs={10}>
 							<TestimonialsSubTitle variant={'h2'} >
-								{t('testimonials.subtitle')}
+								<Trans
+									i18nKey="testimonials.subtitle"
+									components={{ span: <span />}}
+								/>
 							</TestimonialsSubTitle>
 						</Grid>
 						<TestimonialsControlsGrid item xs={2} >

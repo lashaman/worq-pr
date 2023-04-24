@@ -33,6 +33,7 @@ const ServicesGrid = styled(Grid)`
 `;
 
 const ServicesTitle = styled(Typography)`
+  font-family: 'Avenir Black';
   display: flex;
   font-size: 3rem;
   font-weight: 700;
@@ -45,6 +46,7 @@ const ServicesTitle = styled(Typography)`
 
 const ServicesDescriptionTitle = styled(Typography)`
 	font-weight: 900;
+  font-family: 'Avenir Black';
 	white-space: pre-wrap;
   & > span {
     color: ${Colors.purple};
@@ -53,8 +55,10 @@ const ServicesDescriptionTitle = styled(Typography)`
 
 const ServicesDescription = styled(Typography)`
 	color: ${Colors.black};
+	font-family: 'Poppins Light';
 	padding-bottom: 20px;
 	& > span {
+		font-family: 'Poppins Medium';
 		font-weight: 900;
   }
 `;

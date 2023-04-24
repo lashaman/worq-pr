@@ -36,6 +36,7 @@ const BenefitsGrid = styled(Grid)`
 `;
 
 const BenefitsTitle = styled(Typography)`
+	font-family: 'Avenir black';
   display: flex;
   font-weight: 700;
 	& > span {

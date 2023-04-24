@@ -139,28 +139,28 @@ const Footer = () => {
 						</Box>
 					</Grid>
 					<Grid item xs={6} >
-						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}}}>
+						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}, fontFamily: 'Poppins Bold'}}>
 							{FooterColumns.services.title}
 						</Typography>
 						<List>
 							{FooterColumns.services.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
 									<Link href="src/features#" color="inherit" underline="hover">
-										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
+										<Typography variant="subtitle1" sx={{fontSize: {md: '16px', lg: '18px', fontFamily: 'Poppins Light'}}}  >{item}</Typography>
 									</Link>
 								</ListItem>
 							))}
 						</List>
 					</Grid>
 					<Grid item xs={3} >
-						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}}}>
+						<Typography variant="h6" fontWeight="bold" sx={{fontSize: {md: '18px', lg: '20px'}, fontFamily: 'Poppins Bold'}}>
 							{FooterColumns.product.title}
 						</Typography>
 						<List>
 							{FooterColumns.product.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
 									<Link href="src/features#" color="inherit" underline="hover">
-										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
+										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}, fontFamily: 'Poppins Light'}} >{item}</Typography>
 									</Link>
 								</ListItem>
 							))}
@@ -168,7 +168,7 @@ const Footer = () => {
 					</Grid>
 					<Grid item xs={3} >
 						<Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
-							<Typography variant="h6" fontWeight="bold" sx={{paddingRight: '1.3rem', fontSize: {md: '18px', lg: '20px'}}} >
+							<Typography variant="h6" fontWeight="bold" sx={{paddingRight: '1.3rem', fontSize: {md: '18px', lg: '20px'}, fontFamily: 'Poppins Bold'}} >
 								{FooterColumns.about.title}
 							</Typography>
 						</Box>
@@ -177,7 +177,7 @@ const Footer = () => {
 								{FooterColumns.about.items.map((item, i) => (
 									<ListItem key={i} disableGutters>
 										<Link href="src/features#" color="inherit" underline="hover">
-											<Typography variant="subtitle1" fontSize="1.13rem"  sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
+											<Typography variant="subtitle1" fontSize="1.13rem"  sx={{fontSize: {md: '16px', lg: '18px'},  fontFamily: 'Poppins Light'}} >{item}</Typography>
 										</Link>
 									</ListItem>
 								))}
@@ -191,12 +191,12 @@ const Footer = () => {
 					<Grid item xs={4}>
 					</Grid>
 					<Grid item xs={4}>
-						<Typography variant="h6" fontSize="16px" color={Colors.white} textAlign="center">
+						<Typography variant="h6" fontSize="16px" fontFamily="Poppins Medium" color={Colors.white} textAlign="center">
 					© 2021 Worq Pty Ltd. All rights reserved.
 						</Typography>
 					</Grid>
 					<Grid item xs={4}>
-						<Typography variant="h6" fontSize="14px" color={Colors.white} textAlign="center">
+						<Typography variant="h6" fontSize="14px" fontFamily="Poppins Medium" sx={{textTransform: 'underline' }} color={Colors.white} textAlign="center">
 					Privacy Policy
 						</Typography>
 					</Grid>

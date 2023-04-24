@@ -22,8 +22,10 @@ const TestimonialsCardActions = styled(CardActions)`
 `;
 
 const TestimonialDescription = styled(Typography)`
+	font-family: 'Poppins light';
 	font-size: 1.05rem;
 	&  span {
+		font-family: 'Poppins bold';
 		font-weight: 900;
 	}
 `;
@@ -39,7 +41,7 @@ const TestimonialsCard = ({
 	return (
 		<TestimonialsCustomCard>
 			<TestimonialsCardContent>
-				<TestimonialDescription variant="subtitle1" sx={{fontSize: {md: '14px', lg: '18px'}}} >
+				<TestimonialDescription variant="subtitle1" sx={{fontSize: {md: '18px', lg: '20px'}}} >
 					{description}
 				</TestimonialDescription>
 			</TestimonialsCardContent>
@@ -48,10 +50,10 @@ const TestimonialsCard = ({
 					<img	src={companyIcon} alt="O"/>
 				</Box>
 				<Box>
-					<Typography variant="h6" >
+					<Typography variant="h6"  sx={{fontFamily: 'Poppins Bold'}}>
 						{companyRepresentative}
 					</Typography>
-					<Typography variant="subtitle1">
+					<Typography variant="subtitle1" sx={{fontFamily: 'Poppins Medium'}}>
 						{companyRepresentativePosition}
 					</Typography>
 				</Box>

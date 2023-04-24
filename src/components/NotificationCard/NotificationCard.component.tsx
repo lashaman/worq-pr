@@ -20,12 +20,14 @@ const NotificationCardContent = styled(CardContent)`
 `;
 
 const NotificationTitle = styled(Typography)`
-  font-size: 17px;
+  font-family: 'Avenir Heavy';
+	font-size: 17px;
   font-weight: 700;
   color: ${Colors.purple};
 `;
 
 const NotificationDescription = styled(Typography)`
+  font-family: 'Avenir Medium';
   font-size: 14px;
   font-weight: 400;
   color: ${Colors.black};

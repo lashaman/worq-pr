@@ -27,6 +27,7 @@ const ServiceBox = styled(Box)`
 `;
 
 const ServiceTitle = styled(Typography)`
+	font-family: 'Avenir Black';
   text-align: left;
   color: ${Colors.purple};
   font-weight: 700;

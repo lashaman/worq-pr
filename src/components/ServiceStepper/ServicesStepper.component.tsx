@@ -17,10 +17,15 @@ enum ActiveStep {
 }
 
 const SvgText = styled.text`
-	font-size: 1.25rem;
 	font-weight: 900;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Avenir Medium';
 	transition: fill 0.3s ease-in-out;
+	@media (min-width: 600px) {
+		font-size: 16px;
+  }
+	@media (min-width: 1200px) {
+		font-size: 18px;
+  }
 `;
 
 const SvgRect = styled.rect`

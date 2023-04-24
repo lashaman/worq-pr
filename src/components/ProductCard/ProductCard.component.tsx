@@ -1,4 +1,5 @@
 import {
+	Box,
 	Button,
 	Card,
 	CardActions,
@@ -15,15 +16,23 @@ import {Product} from '../../interfaces/product.interface';
 import IconBox from '../IconBox/IconBox.component';
 
 
+const ProductIconBox = styled(Box)`
+  background-color: ${Colors.purpleLighter};
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	`;
+
 const ProductTitle = styled(Typography)`
-	font-size: 1.66rem;
+  font-family: 'Avenir Black';
 	font-weight: 700;
+	white-space: pre-wrap;
 	color: ${Colors.black};
 `;
 
 const ProductCustomCard = styled(Card)`
 	width: 100%;
-	height: 288px;
 	border-radius: 30px;
   box-shadow: -3px 42px 25px rgba(41, 0, 102, 0.01), -1px 19px 19px rgba(41, 0, 102, 0.02), 0 5px 10px rgba(41, 0, 102, 0.02), 0 0 0 rgba(41, 0, 102, 0.02);
 	background-color: ${Colors.white};
@@ -31,30 +40,30 @@ const ProductCustomCard = styled(Card)`
 
 const ProductCardHeader = styled(CardHeader)`
 	width: 100%;
-	padding-bottom: 20px;
 `;
 
 const ProductCardContent = styled(CardContent)`
+	max-width: 100%;
 	height: 81px;
 	padding-top: 0;
-	padding-bottom: 20px;
 `;
 
 const ProductDescription = styled(Typography)`
-	font-size: 1rem;
+	font-family: 'Poppins Light';
 	color: ${Colors.black};
 	& > span {
-		font-weight: 900;
+    font-family: 'Poppins Bold';
   }
 `;
 
 const ProductCardActions = styled(CardActions)`
-	padding: 0;
-	height: 64px;
 	width: 100%;
+	padding: 0;
 `;
 
 const ProductCardButton = styled(Button)`
+	font-family: 'Avenir medium';
+	text-transform: none;
 	display: flex;
 	align-items: center;
 	justify-content: start;
@@ -81,31 +90,31 @@ interface ProductCardProps extends Product {
 
 const ProductCard = ({id, title, description, icon, buttonText, handler}: ProductCardProps) => {
 	return (
-		<ProductCustomCard>
+		<ProductCustomCard sx={{height: {md: '257px', lg: '288px'}}}>
 			<Grid
 				container
-				direction="column"
 				justifyContent="start"
 				alignItems="center"
 			>
 				<ProductCardHeader
+					sx={{paddingBottom: {md: '15px', lg: '20px'}}}
 					avatar={
-						<IconBox width="82px" height="82px">
+						<ProductIconBox  sx={ {height: {md:'60px', lg: '83px'}, width: {md:'60px', lg: '83px'}}}>
 							<img src={icon} alt="O"/>
-						</IconBox>
+						</ProductIconBox>
 					}
 					title={
-						<ProductTitle variant="h3" sx={{fontSize: {md: '18px', lg:'31px'}}}>
+						<ProductTitle variant="h3" sx={{fontSize: {md: '20px', lg:'31px'}}}>
 							{title}
 						</ProductTitle>
 					}
 				/>
-				<ProductCardContent>
-					<ProductDescription variant="subtitle1" sx={{fontSize: {md: '14px', lg:'18px'}}}>
+				<ProductCardContent sx={{height: {md: '96px', lg: '81px'}, paddingBottom: {md: '15px', lg: '20px'}}}>
+					<ProductDescription sx={{fontSize: {md: '15px', lg:'18px'}}}>
 						{description}
 					</ProductDescription>
 				</ProductCardContent>
-				<ProductCardActions disableSpacing>
+				<ProductCardActions sx={{height: {md: '55px', lg: '64px'}}} disableSpacing>
 					<ProductCardButton
 						size="small"
 						onClick={() => handler(id)}

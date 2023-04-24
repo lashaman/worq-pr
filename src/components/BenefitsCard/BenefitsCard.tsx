@@ -52,10 +52,11 @@ const BenefitsCard = ({icon,title, description}: CustomCardProps) => {
 				</Grid>
 				<Grid item xs={10} sx={{paddingLeft: {sm: '26px', lg: '0'}}}>
 					<BenefitsCardContent>
-						<Typography variant="h6" >
+						<Typography variant="h6" sx={{fontFamily: 'Poppins Bold'}}>
 							{title}
 						</Typography>
 						<Typography variant="body1" sx={{
+							fontFamily: 'Poppins Light',
 							fontSize: {sm: '12px', md: '14px', lg: '20px'}
 						}}>
 							{description}

@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: 'Avenir black';
+  src: url('./assets/fonts/Avenir-Black.otf');
+}
+
+@font-face {
+  font-family: 'Avenir medium';
+  src: url('./assets/fonts/Avenir-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Avenir heavy';
+  src: url('./assets/fonts/Avenir-Heavy.otf');
+}
+
+@font-face {
+  font-family:'Poppins Medium';
+  src: url('./assets/fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family:'Poppins Bold';
+  src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family:'Poppins Light';
+  src: url('./assets/fonts/Poppins-Light.ttf');
+}

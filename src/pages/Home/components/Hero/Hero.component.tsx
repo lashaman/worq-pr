@@ -27,11 +27,12 @@ const ButtonBox = styled(Box)`
 const DescriptionHeading = styled(Typography)`
   width: 100%;
   white-space: pre-wrap;
-  font-size: 60px;
   text-align: left;
+	font-family: 'Avenir Black';
   color: ${Colors.purple};
   font-weight: 700;
 `;
+
 
 const HeroContainer = styled(CustomContainer)`
 	position: relative;
@@ -54,8 +55,8 @@ const Hero = () => {
 			<Grid container >
 				<Grid item xs={12} sm={6} lg={5}>
 					<HeroDescBox>
-						<DescriptionHeading variant="h2" gutterBottom>{t('hero.description.heading')}</DescriptionHeading>
-						<Typography variant="h5" component="h5" gutterBottom>{t('hero.description.text')}</Typography>
+						<DescriptionHeading variant="h2"  sx={{fontSize: {md: '60px', lg: '68px'}}} gutterBottom>{t('hero.description.heading')}</DescriptionHeading>
+						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Medium', fontSize: {md: '20px', lg: '62px'}}} gutterBottom>{t('hero.description.text')}</Typography>
 						<ButtonBox>
 							<SecondaryButton>{t('hero.description.button.discover')}</SecondaryButton>
 							<span style={{width: '15px'}}></span>
