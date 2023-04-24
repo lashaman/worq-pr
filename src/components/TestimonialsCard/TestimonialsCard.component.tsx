@@ -1,7 +1,7 @@
 import React from 'react';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 import {Box, Card, CardActions, CardContent, styled, Typography} from '@mui/material';
-import {TestimonialsInterface} from '../interfaces/testimonials.interface';
+import {TestimonialsInterface} from '../../interfaces/testimonials.interface';
 
 
 const TestimonialsCustomCard = styled(Card)`

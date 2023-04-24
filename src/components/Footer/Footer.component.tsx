@@ -9,12 +9,12 @@ import {
 	Grid, styled,
 } from '@mui/material';
 import { Twitter, Instagram, FacebookRounded} from '@mui/icons-material';
-import {MainButton} from '../atoms/common-button.component';
+import {MainButton} from '../Buttons/Buttons.component';
 import {useTranslation} from 'react-i18next';
-import Colors from '../config/colors';
-import {FatPhone} from '../icon-components/icon-components';
+import Colors from '../../config/colors';
+import {FatPhone} from '../JsxIcons/JsxIcons.component';
 import Button from '@mui/material/Button';
-import LogoFooter from '../assets/images/logo-footer.svg';
+import LogoFooter from '../../assets/images/logo-footer.svg';
 import Container from '@mui/material/Container';
 
 const FooterContainer = styled(Container)`
@@ -145,7 +145,7 @@ const Footer = () => {
 						<List>
 							{FooterColumns.services.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
-									<Link href="#" color="inherit" underline="hover">
+									<Link href="src/features#" color="inherit" underline="hover">
 										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 									</Link>
 								</ListItem>
@@ -159,7 +159,7 @@ const Footer = () => {
 						<List>
 							{FooterColumns.product.items.map((item, i) => (
 								<ListItem key={i} disableGutters>
-									<Link href="#" color="inherit" underline="hover">
+									<Link href="src/features#" color="inherit" underline="hover">
 										<Typography variant="subtitle1" fontSize="1.13rem" sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 									</Link>
 								</ListItem>
@@ -176,7 +176,7 @@ const Footer = () => {
 							<List>
 								{FooterColumns.about.items.map((item, i) => (
 									<ListItem key={i} disableGutters>
-										<Link href="#" color="inherit" underline="hover">
+										<Link href="src/features#" color="inherit" underline="hover">
 											<Typography variant="subtitle1" fontSize="1.13rem"  sx={{fontSize: {md: '16px', lg: '18px'}}} >{item}</Typography>
 										</Link>
 									</ListItem>

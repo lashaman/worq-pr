@@ -3,18 +3,18 @@ import {
 	Grid, styled, Typography,
 } from '@mui/material';
 import React from 'react';
-import ProductCard from '../atoms/product-card.component';
+import ProductCard from '../../../../components/ProductCard/ProductCard.component';
 import {Trans, useTranslation} from 'react-i18next';
-import HowWeHelp from '../assets/images/how-we-help.png';
-import CrownIcon from '../assets/icons/crown.svg';
-import BadgeCheckIcon from '../assets/icons/badge-check.svg';
-import ShieldCheckIcon from '../assets/icons/shield-check.svg';
-import ListCheckIcon from '../assets/icons/list-check.svg';
-import SelectIcon from '../assets/icons/select.svg';
-import SparklesIcon from '../assets/icons/sparkles.svg';
-import BooksIcon from '../assets/icons/books.svg';
-import Colors from '../config/colors';
-import {Product} from '../interfaces/product.interface';
+import HowWeHelp from '../../../../assets/images/how-we-help.png';
+import CrownIcon from '../../../../assets/icons/crown.svg';
+import BadgeCheckIcon from '../../../../assets/icons/badge-check.svg';
+import ShieldCheckIcon from '../../../../assets/icons/shield-check.svg';
+import ListCheckIcon from '../../../../assets/icons/list-check.svg';
+import SelectIcon from '../../../../assets/icons/select.svg';
+import SparklesIcon from '../../../../assets/icons/sparkles.svg';
+import BooksIcon from '../../../../assets/icons/books.svg';
+import Colors from '../../../../config/colors';
+import {Product} from '../../../../interfaces/product.interface';
 
 const ProductsContainer = styled(Container)`
   height: 130vh;

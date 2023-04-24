@@ -1,14 +1,14 @@
 import React from 'react';
-import LogoMain from '../assets/icons/logo-main.svg';
+import LogoMain from '../../assets/icons/logo-main.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {
 	CustomContainer
-} from '../atoms/custom-components';
-import {MainButton} from '../atoms/common-button.component';
+} from '../CustomMaterialComponents/CustomMaterial.component';
+import {MainButton} from '../Buttons/Buttons.component';
 import {useTranslation} from 'react-i18next';
 import {styled} from '@mui/material';
 import Button from '@mui/material/Button';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';

@@ -8,11 +8,11 @@ import {
 	styled,
 	Typography
 } from '@mui/material';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import {Product} from '../interfaces/product.interface';
-import IconBox from './icon-box.component';
+import {Product} from '../../interfaces/product.interface';
+import IconBox from '../IconBox/IconBox.component';
 
 
 const ProductTitle = styled(Typography)`

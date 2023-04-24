@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 interface RightProps {
 	left?: boolean;
 	disabled?: boolean;

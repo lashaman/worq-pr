@@ -1,15 +1,15 @@
 import {Box, Container, Grid, styled, Typography} from '@mui/material';
 import React from 'react';
 import {t} from 'i18next';
-import BenefitsBg from '../assets/images/benefits-bg.png';
-import Colors from '../config/colors';
-import {CustomCardProps} from '../interfaces/custom-card-props.interface';
-import ThumbsUp from '../assets/icons/thumbs-up.svg';
-import Delete from '../assets/icons/delete.svg';
-import PiggyBank from '../assets/icons/piggy-bank.svg';
-import BadgeCheck from '../assets/icons/badge-check.svg';
-import BenefitsCard from '../atoms/benefits-card';
-import {MainButton} from '../atoms/common-button.component';
+import BenefitsBg from '../../../../assets/images/benefits-bg.png';
+import Colors from '../../../../config/colors';
+import {CustomCardProps} from '../../../../interfaces/custom-card-props.interface';
+import ThumbsUp from '../../../../assets/icons/thumbs-up.svg';
+import Delete from '../../../../assets/icons/delete.svg';
+import PiggyBank from '../../../../assets/icons/piggy-bank.svg';
+import BadgeCheck from '../../../../assets/icons/badge-check.svg';
+import BenefitsCard from '../../../../components/BenefitsCard/BenefitsCard';
+import {MainButton} from '../../../../components/Buttons/Buttons.component';
 import {Trans} from 'react-i18next';
 
 

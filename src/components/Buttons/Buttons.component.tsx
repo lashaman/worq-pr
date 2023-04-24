@@ -1,6 +1,6 @@
 import {styled} from '@mui/material';
 import Button from '@mui/material/Button';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 
 
 export const MainButton = styled(Button)`

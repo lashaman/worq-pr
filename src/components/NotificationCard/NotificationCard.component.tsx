@@ -1,8 +1,8 @@
 import React from 'react';
 import {Box, Card, CardContent, Grid, styled, Typography} from '@mui/material';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 import {useTranslation} from 'react-i18next';
-import {CustomCardProps} from '../interfaces/custom-card-props.interface';
+import {CustomCardProps} from '../../interfaces/custom-card-props.interface';
 
 const CustomCard = styled(Card)`
   background-color: ${Colors.white};

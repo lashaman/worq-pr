@@ -1,13 +1,13 @@
-import {CustomContainer} from '../atoms/custom-components';
+import {CustomContainer} from '../../../../components/CustomMaterialComponents/CustomMaterial.component';
 import React from 'react';
 import {Box, CardContent, Grid, styled, Typography} from '@mui/material';
 import {useTranslation} from 'react-i18next';
-import {MainButton, SecondaryButton} from '../atoms/common-button.component';
-import Colors from '../config/colors';
-import NotificationCard from '../atoms/notification-card.component';
-import PiggyBank from '../assets/icons/piggy-bank.svg';
-import Delete from '../assets/icons/delete.svg';
-import HeroBackground from '../assets/images/hero-background.png';
+import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';
+import Colors from '../../../../config/colors';
+import NotificationCard from '../../../../components/NotificationCard/NotificationCard.component';
+import PiggyBank from '../../../../assets/icons/piggy-bank.svg';
+import Delete from '../../../../assets/icons/delete.svg';
+import HeroBackground from '../../../../assets/images/hero-background.png';
 
 const HeroDescBox = styled(Box)`
   display: flex;

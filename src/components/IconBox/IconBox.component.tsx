@@ -1,6 +1,6 @@
 import {Box, styled} from '@mui/material';
 import React from 'react';
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 
 const CustomBox = styled(Box)`
   background-color: ${Colors.purpleLighter};

@@ -1,12 +1,12 @@
 import React from 'react';
 import {Box, Container, Grid, styled, Typography} from '@mui/material';
 import {t} from 'i18next';
-import Colors from '../config/colors';
-import Bastil from '../assets/images/bastil.png';
-import Boleir from '../assets/images/boleir.png';
-import Darkside from '../assets/images/darkside.png';
-import EdgeWater from '../assets/images/edgewater.png';
-import FifthFlour from '../assets/images/fifthflour.png';
+import Colors from '../../../../config/colors';
+import Bastil from '../../../../assets/images/bastil.png';
+import Boleir from '../../../../assets/images/boleir.png';
+import Darkside from '../../../../assets/images/darkside.png';
+import EdgeWater from '../../../../assets/images/edgewater.png';
+import FifthFlour from '../../../../assets/images/fifthflour.png';
 
 const ClientsContainer = styled(Container)`
   display: flex;

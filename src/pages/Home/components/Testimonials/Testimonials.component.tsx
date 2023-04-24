@@ -1,12 +1,12 @@
 import React, { useState} from 'react';
-import Colors from '../config/colors';
+import Colors from '../../../../config/colors';
 import {Box, Grid, IconButton, styled, Typography} from '@mui/material';
 import Container from '@mui/material/Container';
-import TestimonialsCard from '../atoms/testimonials-card.component';
+import TestimonialsCard from '../../../../components/TestimonialsCard/TestimonialsCard.component';
 import {Trans, useTranslation} from 'react-i18next';
-import {TestimonialsInterface} from '../interfaces/testimonials.interface';
-import TestimonialsCompanyIcon from '../assets/images/testimonials-company.png';
-import {Right} from '../icon-components/icon-components';
+import {TestimonialsInterface} from '../../../../interfaces/testimonials.interface';
+import TestimonialsCompanyIcon from '../../../../assets/images/testimonials-company.png';
+import {Right} from '../../../../components/JsxIcons/JsxIcons.component';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation, Pagination, Virtual} from 'swiper';
 

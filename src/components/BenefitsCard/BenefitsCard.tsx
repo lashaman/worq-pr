@@ -1,7 +1,7 @@
 import {Box, Card, CardContent, Grid, styled, Typography} from '@mui/material';
 import React from 'react';
-import {CustomCardProps} from '../interfaces/custom-card-props.interface';
-import Colors from '../config/colors';
+import {CustomCardProps} from '../../interfaces/custom-card-props.interface';
+import Colors from '../../config/colors';
 
 const BenefitsCustomCard = styled(Card)`
 	display: flex;

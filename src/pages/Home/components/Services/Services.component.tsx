@@ -1,9 +1,9 @@
 import React from 'react';
 import {Box, Container, Fade, Grid, styled, Typography} from '@mui/material';
 import {Trans} from 'react-i18next';
-import Colors from '../config/colors';
-import {MainButton} from '../atoms/common-button.component';
-import ServicesStepper from '../atoms/services-stepper.component';
+import Colors from '../../../../config/colors';
+import {MainButton} from '../../../../components/Buttons/Buttons.component';
+import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepper.component';
 
 const ServicesContainer = styled(Container)`
   width: 100%;
