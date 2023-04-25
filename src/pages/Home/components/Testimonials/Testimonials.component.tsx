@@ -14,6 +14,7 @@ import {Navigation, Pagination, Virtual} from 'swiper';
 import 'swiper/css';
 
 const TestimonialsContainer = styled(Container)`
+	display: flex;
 	width: 100%;
 	background-color: ${Colors.purpleLighter};
 	flex-direction: column;
