@@ -112,7 +112,7 @@ const Footer = () => {
 				}}
 			>
 				<Grid container spacing={2} columns={18} justifyContent="center">
-					<Grid item xs={6} spacing={2}>
+					<Grid item xs={6} >
 						<Box component="img" src={LogoFooter} alt="Logo" sx={{borderBottom: `1px solid ${Colors.purple}`, paddingBottom: '1.25em'}}/>
 						<SocialBox mt={1}>
 							<FollowUsTitle variant="subtitle1"  sx={{md: '18px', lg: '20px'}}>
@@ -187,7 +187,7 @@ const Footer = () => {
 				</Grid>
 			</Box>
 			<CopyRightBox sx={{height: {md: '60px', lg: '80px'}}}>
-				<Grid container >
+				<Grid container>
 					<Grid item xs={4}>
 					</Grid>
 					<Grid item xs={4}>

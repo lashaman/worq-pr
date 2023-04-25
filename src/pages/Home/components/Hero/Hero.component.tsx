@@ -56,7 +56,7 @@ const Hero = () => {
 				<Grid item xs={12} sm={6} lg={5}>
 					<HeroDescBox>
 						<DescriptionHeading variant="h2"  sx={{fontSize: {md: '60px', lg: '68px'}}} gutterBottom>{t('hero.description.heading')}</DescriptionHeading>
-						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Medium', fontSize: {md: '20px', lg: '62px'}}} gutterBottom>{t('hero.description.text')}</Typography>
+						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Light', fontSize: {md: '20px', lg: '22px'}}} gutterBottom>{t('hero.description.text')}</Typography>
 						<ButtonBox>
 							<SecondaryButton>{t('hero.description.button.discover')}</SecondaryButton>
 							<span style={{width: '15px'}}></span>
