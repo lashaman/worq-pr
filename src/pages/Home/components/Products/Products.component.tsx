@@ -21,8 +21,6 @@ const ProductsContainer = styled(Container)`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-left: 0;
-	padding-right: 0;
 `;
 
 const ProductsGrid = styled(Grid)`
@@ -123,7 +121,7 @@ const ProductsComponent = () => {
 		<>
 			<hr style={{borderTop: `1px solid ${Colors.purple}`}}/>
 			<ProductsContainer maxWidth={false}>
-				<ProductsGrid container spacing={2.5}>
+				<ProductsGrid container spacing={ {xs: 1, md: 2.5}}>
 					<Grid item xs={12} md={8}>
 						<ProductImage>
 							<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}}}>
