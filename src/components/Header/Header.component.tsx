@@ -46,7 +46,6 @@ export const HeaderAppBar = styled(AppBar)`
 	position: static;
 	box-shadow: none;
 	background-color: ${Colors.white};
-  height: 6.25rem;
 `;
 
 const MenuIcon = () => (
@@ -79,7 +78,7 @@ const Header = () => {
 				{pages.map((page, index) => (
 					<ListItem key={page + index} >
 						<ListItemButton>
-							<ListItemText primary={page} />
+							<ListItemText primary={t(page)} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -103,7 +102,7 @@ const Header = () => {
 			};
 
 	return (
-		<HeaderAppBar >
+		<HeaderAppBar sx={{height: {xs: '90px', md: '100px'}}}>
 			<CustomContainer>
 				<HeaderToolbar disableGutters sx={{justifyContent: {xs: 'space-between', md: 'center'}}}>
 					<Box component="img" src={LogoMain} alt="LOGO" sx={{

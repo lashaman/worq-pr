@@ -11,19 +11,14 @@ const TestimonialsCustomCard = styled(Card)`
   background-color: ${Colors.white};	
 `;
 
-const TestimonialsCardContent = styled(CardContent)`
-	padding: 15px 30px 10px 30px;
-`;
-
 const TestimonialsCardActions = styled(CardActions)`
-	padding: 24px 0;
-	margin: 0 30px;
 	border-top: 1px solid ${Colors.purpleLight};
 `;
 
 const TestimonialDescription = styled(Typography)`
 	font-family: 'Poppins light';
 	font-size: 1.05rem;
+	line-height: 1.15;
 	&  span {
 		font-family: 'Poppins bold';
 		font-weight: 900;
@@ -40,20 +35,20 @@ const TestimonialsCard = ({
 }: TestimonialsCardProps) => {
 	return (
 		<TestimonialsCustomCard>
-			<TestimonialsCardContent>
-				<TestimonialDescription variant="subtitle1" sx={{fontSize: {md: '18px', lg: '20px'}}} >
+			<CardContent sx={{	padding: {xs: '7.5px 20px 5px 20px', md: '15px 30px 10px 30px'}}}>
+				<TestimonialDescription variant="subtitle1" sx={{fontSize: {xs: '16px', md: '18px', lg: '20px'}}} >
 					{description}
 				</TestimonialDescription>
-			</TestimonialsCardContent>
-			<TestimonialsCardActions>
+			</CardContent>
+			<TestimonialsCardActions sx={{padding: {xs: '10px 15px', md: '24px 20px'}}}>
 				<Box sx={{marginRight: '20px'}}>
 					<img	src={companyIcon} alt="O"/>
 				</Box>
 				<Box>
-					<Typography variant="h6"  sx={{fontFamily: 'Poppins Bold'}}>
+					<Typography variant="h6"  sx={{fontFamily: 'Poppins Bold', fontSize: {xs: '18px', md: '20px'}}}>
 						{companyRepresentative}
 					</Typography>
-					<Typography variant="subtitle1" sx={{fontFamily: 'Poppins Medium'}}>
+					<Typography variant="subtitle1" sx={{fontFamily: 'Poppins Medium', fontSize: {xs: '14px', md: '16px'}}}>
 						{companyRepresentativePosition}
 					</Typography>
 				</Box>

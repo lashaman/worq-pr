@@ -17,9 +17,7 @@ import Colors from '../../../../config/colors';
 import {Product} from '../../../../interfaces/product.interface';
 
 const ProductsContainer = styled(Container)`
-  height: 130vh;
 	max-width: 1280px;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -126,15 +124,15 @@ const ProductsComponent = () => {
 			<hr style={{borderTop: `1px solid ${Colors.purple}`}}/>
 			<ProductsContainer maxWidth={false}>
 				<ProductsGrid container spacing={2.5}>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<ProductImage>
-							<ProductImageTitle sx={{fontSize: {md: '40px', lg:'48px'}}}>
+							<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}}}>
 								{t('products.productImage.title')}
 							</ProductImageTitle>
 						</ProductImage>
 					</Grid>
 					{Products.map((product) => (
-						<Grid item xs={4} key={product.id}>
+						<Grid item xs={12} md={4} key={product.id}>
 							<ProductCard {...product} handler={ProductCardClickHandler} />
 						</Grid>
 					))}

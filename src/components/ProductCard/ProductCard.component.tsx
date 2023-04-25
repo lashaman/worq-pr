@@ -90,31 +90,31 @@ interface ProductCardProps extends Product {
 
 const ProductCard = ({id, title, description, icon, buttonText, handler}: ProductCardProps) => {
 	return (
-		<ProductCustomCard sx={{height: {md: '257px', lg: '288px'}}}>
+		<ProductCustomCard sx={{height: {xs: '257px', lg: '288px'}}}>
 			<Grid
 				container
 				justifyContent="start"
 				alignItems="center"
 			>
 				<ProductCardHeader
-					sx={{paddingBottom: {md: '15px', lg: '20px'}}}
+					sx={{paddingBottom: {xs: '15px', lg: '20px'}}}
 					avatar={
-						<ProductIconBox  sx={ {height: {md:'60px', lg: '83px'}, width: {md:'60px', lg: '83px'}}}>
+						<ProductIconBox  sx={ {height: {xs:'60px', lg: '83px'}, width: {xs:'60px', lg: '83px'}}}>
 							<img src={icon} alt="O"/>
 						</ProductIconBox>
 					}
 					title={
-						<ProductTitle variant="h3" sx={{fontSize: {md: '20px', lg:'31px'}}}>
+						<ProductTitle variant="h3" sx={{fontSize: {xs: '20px', lg:'31px'}}}>
 							{title}
 						</ProductTitle>
 					}
 				/>
-				<ProductCardContent sx={{height: {md: '96px', lg: '81px'}, paddingBottom: {md: '15px', lg: '20px'}}}>
-					<ProductDescription sx={{fontSize: {md: '15px', lg:'18px'}}}>
+				<ProductCardContent sx={{height: {xs: '96px', lg: '81px'}, paddingBottom: {xs: '15px', lg: '20px'}}}>
+					<ProductDescription sx={{fontSize: {xs: '15px', lg:'18px'}}}>
 						{description}
 					</ProductDescription>
 				</ProductCardContent>
-				<ProductCardActions sx={{height: {md: '55px', lg: '64px'}}} disableSpacing>
+				<ProductCardActions sx={{height: {xs: '55px', lg: '64px'}}} disableSpacing>
 					<ProductCardButton
 						size="small"
 						onClick={() => handler(id)}

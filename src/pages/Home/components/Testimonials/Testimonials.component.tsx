@@ -14,13 +14,11 @@ import {Navigation, Pagination, Virtual} from 'swiper';
 import 'swiper/css';
 
 const TestimonialsContainer = styled(Container)`
-	display: flex;
 	width: 100%;
 	background-color: ${Colors.purpleLighter};
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 100px 0;
 `;
 
 const TestimonialsBox = styled(Box)`
@@ -35,12 +33,10 @@ const TestimonialsBox = styled(Box)`
 `;
 
 const TestimonialsTitle = styled(Typography)`
-	display: flex;
 	font-weight: 700;
 	font-family: 'Avenir black';
 	& > span {
 		color: ${Colors.purple};
-		margin-left: 10px;
   }
 `;
 
@@ -49,9 +45,6 @@ const TestimonialsSubTitle = styled(Typography)`
 	font-family: 'Poppins Medium';
 	white-space: pre-wrap;
 	padding: 30px 0;
-	margin-bottom: 40px;
-	border-bottom: 1px solid ${Colors.purple};
-	font-size: 20px;
 	& > span {
 		font-family: 'Poppins Bold';
   }
@@ -103,12 +96,13 @@ const Testimonials = () => {
 	};
 
 	return (
-		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}}}>
+		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}, padding: {xs: '50px 16px' , lg: '100px 0'}}}>
 			<TestimonialsBox>
 				<Grid container>
 					<Grid item xs={12}>
 						<TestimonialsTitle variant={'h2'} sx={{
-							fontSize: {md: '28px', lg: '36px'},
+							fontSize: {xs: '28px', lg: '36px'},
+							width: {xs: '80%', lg: '100%'},
 						}}>
 							<Trans
 								i18nKey="testimonials.title"
@@ -118,14 +112,14 @@ const Testimonials = () => {
 					</Grid>
 					<Grid item container xs={12}>
 						<Grid item xs={10}>
-							<TestimonialsSubTitle variant={'h2'} >
+							<TestimonialsSubTitle variant={'h2'} sx={{fontSize: {xs: '16px', md: '20px'}, borderBottom: {md: `1px solid ${Colors.purple}`}, marginBottom: {md: '20px'}}} >
 								<Trans
 									i18nKey="testimonials.subtitle"
 									components={{ span: <span />}}
 								/>
 							</TestimonialsSubTitle>
 						</Grid>
-						<TestimonialsControlsGrid item xs={2} >
+						<TestimonialsControlsGrid item xs={2} sx={{display: {xs: 'none', md: 'flex'}}}>
 							<IconButton color="primary"  component="label" className="prev-button" onClick={handlePrev}>
 								<Right left={true} disabled={prevButtonDisabled}/>
 							</IconButton>
@@ -140,7 +134,10 @@ const Testimonials = () => {
 						modules={[Navigation, Pagination, Virtual]}
 						spaceBetween={20}
 						breakpoints={{
-							// when window width is >= 640px
+							0: {
+								slidesPerView: 1,
+								spaceBetween: 30,
+							},
 							1024: {
 								width: 959,
 								slidesPerView: 1,

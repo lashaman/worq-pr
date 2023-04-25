@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Grid, styled, Typography} from '@mui/material';
+import {Box, Container, Divider, Grid, styled, Typography} from '@mui/material';
 import {t} from 'i18next';
 import Colors from '../../../../config/colors';
 import Bastil from '../../../../assets/images/bastil.png';
@@ -27,11 +27,14 @@ const ServiceBox = styled(Box)`
 `;
 
 const ServiceTitle = styled(Typography)`
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 	font-family: 'Avenir Black';
-  text-align: left;
   color: ${Colors.purple};
   font-weight: 700;
-  border-right: 2px solid ${Colors.purple};
 `;
 
 const ImgGrid = styled(Grid)`
@@ -50,24 +53,42 @@ const clients = [
 	Darkside
 ];
 
+const clientsXs = [
+	EdgeWater,
+	Bastil,
+	FifthFlour,
+];
+
 const Clients = () => {
 	return (
 		<ClientsContainer maxWidth={false}>
 			<ServiceBox sx={{
-				padding: {md: '30px 0 30px 0', lg: '100px 0 100px 0'},
+				padding: {xs: '40px 0 40px 0', md: '30px 0 30px 0', lg: '80px 0 80px 0'},
 			}}>
-				<Grid container spacing={4} sx={{width: '100%'}}>
-					<Grid item xs={4}>
+				<Grid container  spacing={{xs: '1', md: '4'}} sx={{width: 'fit-content'}}>
+					<Grid xs={12} md={3} lg={4}>
 						<ServiceTitle variant="h3" sx={{
-							fontSize: {md: '30px' , lg: '48px'},
+							fontSize: {xs: '28px', md: '30px' , lg: '48px'},
+							padding: {xs: '0 0 20px 0', md: '0 0 0 0'},
+							textAlign: {xs: 'center', md: 'left'},
+							borderRight: {xs: 'none', md: `2px solid ${Colors.purple}`},
 						}}>
 							{t('clients.title')}
 						</ServiceTitle>
 					</Grid>
-					<ImgGrid item xs={8}>
+					<Divider orientation="horizontal" variant="middle" sx={{ width: '25%', margin: '0 auto', display: {xs: 'flex', md: 'none'}}} flexItem />
+					<ImgGrid  md={9} lg={8} sx={{display: {xs: 'none', md: 'flex'}, paddingLeft: {md: '20px'}}} justifyContent="space-between">
 						{clients.map((client) => (
 							<Box component="img" src={client} key={client} alt="client" sx={{
 								width: {xs: '100px', md: '108.67px', lg: '133.33px'},
+							}} />
+						))}
+					</ImgGrid>
+					<ImgGrid item xs={12} sx={{display: {xs: 'block', md: 'none'}}}>
+						{clientsXs.map((client) => (
+							<Box component="img" src={client} key={client} alt="client" sx={{
+								width: '116px',
+								padding: '20px 0 0 0',
 							}} />
 						))}
 					</ImgGrid>

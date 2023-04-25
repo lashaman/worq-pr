@@ -28,11 +28,6 @@ const BenefitsGrid = styled(Grid)`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  & > .MuiGrid-item {
-    &:nth-child(2) {
-      padding-left: 4.810em;
-    }
-  }
 	@media (min-width: 600px) {
     flex-direction: row-reverse;
   }
@@ -43,11 +38,9 @@ const BenefitsGrid = styled(Grid)`
 
 const BenefitsTitle = styled(Typography)`
 	font-family: 'Avenir black';
-  display: flex;
   font-weight: 700;
 	& > span {
 		color: ${Colors.black};
-		margin-left: 10px;
   }
 `;
 
@@ -85,19 +78,21 @@ const Benefits = () => {
 	];
 
 	return (
-		<Container maxWidth="lg" sx={{padding: '63px 0'}}>
+		<Container maxWidth="lg" sx={{padding: {xs:'63px 16px'}}}>
 			<BenefitsGrid container spacing={0}>
-				<Grid item xs={6}>
+				<Grid item md={6}>
 					<BenefitsImageBox sx={{
-						height: {sm: '250px', md: '467px', lg: '650px'}
+						display: {xs: 'none', md: 'flex'},
+						height: {md: '467px', lg: '650px'}
 					}}>
 					</BenefitsImageBox>
 				</Grid>
-				<Grid item xs={6}>
-					<Box sx={{height: {md: '530px', lg: '628px'}}}>
+				<Grid item xs={12} md={6} sx={{paddingLeft: {xs: 0 , md: 0, lg: '77px'}}}>
+					<Box sx={{height: {xs: '530px', lg: '628px'}}}>
 						<DescriptionBox>
 							<BenefitsTitle variant="h3" color={Colors.purple} sx={{
-								fontSize: {sm: '20px', md: '24px', lg: '36px'}
+								fontSize: {xs: '20px', md: '24px', lg: '36px'},
+								width: {xs: '50%', md: '100%'}
 							}}>
 								<Trans
 									i18nKey="benefits.title"
@@ -105,12 +100,10 @@ const Benefits = () => {
 								/>
 							</BenefitsTitle>
 						</DescriptionBox>
-
 						{BenefitsList.map(
 							(Benefit, index) => <BenefitsCard key={index} {...Benefit} />
 						)}
-
-						<MainButton size="small">{t('bookDemo.title')}</MainButton>
+						<MainButton size="small">{t('bookDemo.short')}</MainButton>
 					</Box>
 				</Grid>
 			</BenefitsGrid>

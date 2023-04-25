@@ -7,10 +7,10 @@ import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepp
 
 const ServicesContainer = styled(Container)`
   width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+  @media (min-width: 0px) {
+		height: auto;
+  }
   @media (min-width: 600px) {  
 		padding-left: 0;
     padding-right: 0;
