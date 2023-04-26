@@ -13,7 +13,6 @@ import Colors from '../../config/colors';
 import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {Product} from '../../interfaces/product.interface';
-import IconBox from '../IconBox/IconBox.component';
 
 
 const ProductIconBox = styled(Box)`

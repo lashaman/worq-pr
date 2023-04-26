@@ -66,7 +66,7 @@ const Clients = () => {
 				padding: {xs: '40px 0 40px 0', md: '30px 0 30px 0', lg: '80px 0 80px 0'},
 			}}>
 				<Grid container  spacing={{xs: '1', md: '4'}} sx={{width: 'fit-content'}}>
-					<Grid xs={12} md={3} lg={4}>
+					<Grid item xs={12} md={3} lg={4}>
 						<ServiceTitle variant="h3" sx={{
 							fontSize: {xs: '28px', md: '30px' , lg: '48px'},
 							padding: {xs: '0 0 20px 0', md: '0 0 0 0'},
@@ -77,7 +77,7 @@ const Clients = () => {
 						</ServiceTitle>
 					</Grid>
 					<Divider orientation="horizontal" variant="middle" sx={{ width: '25%', margin: '0 auto', display: {xs: 'flex', md: 'none'}}} flexItem />
-					<ImgGrid  md={9} lg={8} sx={{display: {xs: 'none', md: 'flex'}, paddingLeft: {md: '20px'}}} justifyContent="space-between">
+					<ImgGrid  item md={9} lg={8} sx={{display: {xs: 'none', md: 'flex'}, paddingLeft: {md: '20px'}}} justifyContent="space-between">
 						{clients.map((client) => (
 							<Box component="img" src={client} key={client} alt="client" sx={{
 								width: {xs: '100px', md: '108.67px', lg: '133.33px'},

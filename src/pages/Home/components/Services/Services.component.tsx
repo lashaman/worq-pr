@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Fade, Grid, styled, Typography} from '@mui/material';
+import {Box, Container, Grid, styled, Typography} from '@mui/material';
 import {Trans} from 'react-i18next';
 import Colors from '../../../../config/colors';
 import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';

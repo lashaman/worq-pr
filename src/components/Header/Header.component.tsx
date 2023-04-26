@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import LogoMain from '../../assets/icons/logo-main.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {

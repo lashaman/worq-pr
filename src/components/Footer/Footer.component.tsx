@@ -44,16 +44,6 @@ const SocialBox = styled(Box)`
 	max-width: 100%;
 `;
 
-const ProductBox = styled(Box)`
-  display: flex;
-	@media (min-width: 0px) {
-    justify-content:  flex-start;
-  }
-	@media (min-width: 900px) {
-		justify-content:  flex-end;
-  }
-`;
-
 const FollowUsTitle = styled(Typography)`
 	margin-top: 2px;
 	display: flex;
