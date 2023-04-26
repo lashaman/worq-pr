@@ -1,20 +1,12 @@
 import React from 'react';
 import Colors from '../../config/colors';
 import styled from '@emotion/styled';
+import {ServiceSteps} from '../../enums/ServiceSteps';
 
 interface ServicesStepperProps {
 	changeStep: (event: React.SyntheticEvent, newValue: number) => void;
 }
 
-enum ActiveStep {
-	Compliance = 0,
-	SOP = 1,
-	Assessments = 2,
-	Training = 3,
-	Audits = 4,
-	Consulting = 5,
-	Risk = 6,
-}
 
 const SvgText = styled.text`
 	font-weight: 900;
@@ -45,37 +37,37 @@ const SvgGroup = styled.g`
 `;
 
 const ServicesStepper = ( { changeStep}: ServicesStepperProps) => {
-	const [activeStep, setActiveStep] = React.useState(ActiveStep.Compliance);
+	const [activeStep, setActiveStep] = React.useState(ServiceSteps.Compliance);
 	const getActiveBgColor = (step: number) =>  activeStep === step ? Colors.purple : Colors.purpleLighter;
 	const getActiveTextColor = (step: number) =>  activeStep === step ? Colors.purpleLighter : Colors.black;
 	const svgCircles = [
-		{id: 'Ellipse1', cx: 580, cy: 141, r: 16, activeStep: ActiveStep.Compliance},
-		{id: 'Ellipse2', cx: 494, cy: 166, r: 15.5, activeStep: ActiveStep.SOP},
-		{id: 'Ellipse3', cx: 429, cy: 229, r: 16, activeStep: ActiveStep.Assessments},
-		{id: 'Ellipse4', cx: 409, cy: 313, r: 16, activeStep: ActiveStep.Training},
-		{id: 'Ellipse5', cx: 429, cy: 397, r: 16, activeStep: ActiveStep.Audits},
-		{id: 'Ellipse6', cx: 494, cy: 459, r: 16, activeStep: ActiveStep.Consulting},
-		{id: 'Ellipse7', cx: 580, cy: 485, r: 16, activeStep: ActiveStep.Risk},
+		{id: 'Ellipse1', cx: 580, cy: 141, r: 16, activeStep: ServiceSteps.Compliance},
+		{id: 'Ellipse2', cx: 494, cy: 166, r: 15.5, activeStep: ServiceSteps.SOP},
+		{id: 'Ellipse3', cx: 429, cy: 229, r: 16, activeStep: ServiceSteps.Assessments},
+		{id: 'Ellipse4', cx: 409, cy: 313, r: 16, activeStep: ServiceSteps.Training},
+		{id: 'Ellipse5', cx: 429, cy: 397, r: 16, activeStep: ServiceSteps.Audits},
+		{id: 'Ellipse6', cx: 494, cy: 459, r: 16, activeStep: ServiceSteps.Consulting},
+		{id: 'Ellipse7', cx: 580, cy: 485, r: 16, activeStep: ServiceSteps.Risk},
 	];
 
 	const svgPaths = [
-		{id: 'Vector1', d: 'M580 141.5L537.66 41.2206C534.533 33.814 527.274 29 519.235 29H412.5', activeStep: ActiveStep.Compliance},
-		{id: 'Vector2', d: 'M494.5 166.5L428.276 126.393C425.152 124.5 421.569 123.5 417.916 123.5H325', activeStep: ActiveStep.SOP},
-		{id: 'Vector3', d: 'M428.5 230.5L364.204 219.297C363.07 219.099 361.921 219 360.771 219H248', activeStep: ActiveStep.Assessments},
-		{id: 'Vector4', d: 'M393 312H217', activeStep: ActiveStep.Training},
-		{id: 'Vector5', d: 'M428.5 397L363.621 407.732C362.542 407.91 361.451 408 360.357 408H246', activeStep: ActiveStep.Audits},
-		{id: 'Vector6', d: 'M493 461L427.848 501.487C424.679 503.456 421.023 504.5 417.292 504.5H321.5', activeStep: ActiveStep.Consulting},
-		{id: 'Vector7', d: 'M580.5 485.5L537.178 587.33C534.038 594.709 526.794 599.5 518.774 599.5H413.5', activeStep: ActiveStep.Risk},
+		{id: 'Vector1', d: 'M580 141.5L537.66 41.2206C534.533 33.814 527.274 29 519.235 29H412.5', activeStep: ServiceSteps.Compliance},
+		{id: 'Vector2', d: 'M494.5 166.5L428.276 126.393C425.152 124.5 421.569 123.5 417.916 123.5H325', activeStep: ServiceSteps.SOP},
+		{id: 'Vector3', d: 'M428.5 230.5L364.204 219.297C363.07 219.099 361.921 219 360.771 219H248', activeStep: ServiceSteps.Assessments},
+		{id: 'Vector4', d: 'M393 312H217', activeStep: ServiceSteps.Training},
+		{id: 'Vector5', d: 'M428.5 397L363.621 407.732C362.542 407.91 361.451 408 360.357 408H246', activeStep: ServiceSteps.Audits},
+		{id: 'Vector6', d: 'M493 461L427.848 501.487C424.679 503.456 421.023 504.5 417.292 504.5H321.5', activeStep: ServiceSteps.Consulting},
+		{id: 'Vector7', d: 'M580.5 485.5L537.178 587.33C534.038 594.709 526.794 599.5 518.774 599.5H413.5', activeStep: ServiceSteps.Risk},
 	];
 
 	const svgGroups = [
-		{id: 'Frame1', rectProps: { x: 90, width: 325, height: 55, rx: 27.5 }, textProps: { x: 143, y: 33, fontSize: 18, fontWeight: 'bold' }, textContent: 'Compliance & Regulation', activeStep: ActiveStep.Compliance},
-		{id: 'Frame2', rectProps: { x: 50, y: 95, width: 278, height: 55, rx: 27.5 }, textProps: { x: 79, y: 128, fontSize: 18, fontWeight: 'bold' }, textContent: 'SOP’s & Work Instructions', activeStep: ActiveStep.SOP},
-		{id: 'Frame3', rectProps: { x: 20, y: 190, width: 234, height: 55, rx: 27.5 }, textProps: { x: 80, y: 222, fontSize: 18, fontWeight: 'bold' }, textContent: 'Assessments', activeStep: ActiveStep.Assessments},
-		{id: 'Frame4', rectProps: { y: 285, width: 217, height: 55, rx: 27.5 }, textProps: { x: 70, y: 317, fontSize: 18, fontWeight: 'bold' }, textContent: 'Training', activeStep: ActiveStep.Training},
-		{id: 'Frame5', rectProps: { x: 20, y: 380, width: 234, height: 55, rx: 27.5 }, textProps: { x: 100, y: 413, fontSize: 18, fontWeight: 'bold' }, textContent: 'Audits', activeStep: ActiveStep.Audits},
-		{id: 'Frame6', rectProps: { x: 50, y: 475, width: 278, height: 55, rx: 27.5 }, textProps: { x: 140, y: 507, fontSize: 18, fontWeight: 'bold' }, textContent: 'Consulting', activeStep: ActiveStep.Consulting},
-		{id: 'Frame7', rectProps: { x: 90, y: 570, width: 325, height: 55, rx: 27.5 }, textProps: { x: 180, y: 602, fontSize: 18, fontWeight: 'bold' }, textContent: 'Risk Management', activeStep: ActiveStep.Risk},
+		{id: 'Frame1', rectProps: { x: 90, width: 325, height: 55, rx: 27.5 }, textProps: { x: 143, y: 33, fontSize: 18, fontWeight: 'bold' }, textContent: 'Compliance & Regulation', activeStep: ServiceSteps.Compliance},
+		{id: 'Frame2', rectProps: { x: 50, y: 95, width: 278, height: 55, rx: 27.5 }, textProps: { x: 79, y: 128, fontSize: 18, fontWeight: 'bold' }, textContent: 'SOP’s & Work Instructions', activeStep: ServiceSteps.SOP},
+		{id: 'Frame3', rectProps: { x: 20, y: 190, width: 234, height: 55, rx: 27.5 }, textProps: { x: 80, y: 222, fontSize: 18, fontWeight: 'bold' }, textContent: 'Assessments', activeStep: ServiceSteps.Assessments},
+		{id: 'Frame4', rectProps: { y: 285, width: 217, height: 55, rx: 27.5 }, textProps: { x: 70, y: 317, fontSize: 18, fontWeight: 'bold' }, textContent: 'Training', activeStep: ServiceSteps.Training},
+		{id: 'Frame5', rectProps: { x: 20, y: 380, width: 234, height: 55, rx: 27.5 }, textProps: { x: 100, y: 413, fontSize: 18, fontWeight: 'bold' }, textContent: 'Audits', activeStep: ServiceSteps.Audits},
+		{id: 'Frame6', rectProps: { x: 50, y: 475, width: 278, height: 55, rx: 27.5 }, textProps: { x: 140, y: 507, fontSize: 18, fontWeight: 'bold' }, textContent: 'Consulting', activeStep: ServiceSteps.Consulting},
+		{id: 'Frame7', rectProps: { x: 90, y: 570, width: 325, height: 55, rx: 27.5 }, textProps: { x: 180, y: 602, fontSize: 18, fontWeight: 'bold' }, textContent: 'Risk Management', activeStep: ServiceSteps.Risk},
 	];
 
 

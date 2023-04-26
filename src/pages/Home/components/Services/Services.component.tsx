@@ -2,8 +2,10 @@ import React from 'react';
 import {Box, Container, Fade, Grid, styled, Typography} from '@mui/material';
 import {Trans} from 'react-i18next';
 import Colors from '../../../../config/colors';
-import {MainButton} from '../../../../components/Buttons/Buttons.component';
+import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';
 import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepper.component';
+import TabPanel from './TabPanel.component';
+import {ServiceSteps} from '../../../../enums/ServiceSteps';
 
 const ServicesContainer = styled(Container)`
   width: 100%;
@@ -72,34 +74,16 @@ const StepperBox = styled(Box)`
   }
 `;
 
-interface TabPanelProps {
-	children?: React.ReactNode;
-	index: number;
-	value: number;
-}
 
-const TabPanel = (props: TabPanelProps) => {
-	const { children, value, index, ...other } = props;
-
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`simple-tabpanel-${index}`}
-			aria-labelledby={`simple-tab-${index}`}
-			{...other}
-		>
-			{value === index && (
-				<Fade in={value === index}>
-					<Box sx={{ p: 3 , transition: 'all 0.4s ease-in-out'}}>
-						{children}
-					</Box>
-				</Fade>
-			)}
-		</div>
-	);
-};
-
+const ServicesList =  [
+	{activeStep: ServiceSteps.Compliance, textContent: 'Compliance & Regulation'},
+	{activeStep: ServiceSteps.SOP, textContent: 'SOP’s & Work Instructions'},
+	{activeStep: ServiceSteps.Assessments, textContent: 'Assessments'},
+	{activeStep: ServiceSteps.Training, textContent: 'Training'},
+	{activeStep: ServiceSteps.Audits, textContent: 'Audits'},
+	{activeStep: ServiceSteps.Consulting, textContent: 'Consulting'},
+	{activeStep: ServiceSteps.Risk, textContent: 'Risk Management'},
+];
 
 const Services = () => {
 	const [value, setValue] = React.useState(0);
@@ -121,12 +105,28 @@ const Services = () => {
 						/>
 					</ServicesTitle>
 				</Grid>
-				<Grid item xs={7} lg={6}>
+				<Grid item md={7} lg={6} sx={{display: {xs: 'none', md: null}}}>
 					<StepperBox>
 						<ServicesStepper changeStep={handleChange}/>
 					</StepperBox>
 				</Grid>
-				<Grid item xs={5} lg={6}>
+				<Grid item xs={12} sx={{display: {md: 'none'}}}>
+					{ServicesList.slice(0,2).map((item, index) => (
+						<SecondaryButton
+							sx={{
+								width: '100%',
+								margin: '10px 0',
+								backgroundColor: value === item.activeStep ? Colors.purple : Colors.purpleLighter,
+								color: value === item.activeStep ? Colors.purpleLighter : Colors.black
+							}}
+							key={index}
+							onClick={(e) => handleChange(e,  item.activeStep)}
+							variant="contained">
+							{item.textContent}
+						</SecondaryButton>
+					))}
+				</Grid>
+				<Grid item xs={12} md={5} lg={6}>
 					<TabPanel value={value} index={0}>
 						<ServicesDescriptionTitle  sx={{
 							fontSize: {xs: '12px', sm: '20px', md: '28px', lg: '36px'},
@@ -257,6 +257,22 @@ const Services = () => {
 							<Trans i18nKey="services.description.button" />
 						</MainButton>
 					</TabPanel>
+				</Grid>
+				<Grid item xs={12} sx={{display: {md: 'none'}}}>
+					{ServicesList.slice(2,7).map((item, index) => (
+						<SecondaryButton
+							sx={{
+								width: '100%',
+								margin: '10px 0',
+								backgroundColor: value === item.activeStep ? Colors.purple : Colors.purpleLighter,
+								color: value === item.activeStep ? Colors.purpleLighter : Colors.black
+							}}
+							key={index}
+							onClick={(e) => handleChange(e,  item.activeStep)}
+							variant="contained">
+							{item.textContent}
+						</SecondaryButton>
+					))}
 				</Grid>
 			</ServicesGrid>
 		</ServicesContainer>

@@ -27,15 +27,14 @@ export const MainButton = styled(Button)`
 
 export const SecondaryButton = styled(Button)`
 	background-color: ${Colors.purpleLighter};
-	color: ${Colors.purple};
+	color: ${Colors.black};
 	border-radius: 9999px;
 	padding: 12px 40px;
   font-family: 'Avenir black';
   text-transform: none;
 	&:hover, &:focus, &:active {	
-		background-color: ${Colors.purpleLighter};
-    color: ${Colors.purple};
-		opacity: 0.8;
+		background-color: ${Colors.purple};
+    color: ${Colors.purpleLighter};
 	},
 	@media (min-width: 900px) {
 		font-size: 16px;
