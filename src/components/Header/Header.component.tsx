@@ -76,7 +76,7 @@ const Header = () => {
 		>
 			<List>
 				{pages.map((page, index) => (
-					<ListItem key={page + index} >
+					<ListItem key={page + index} href={`/${t(page)}`}>
 						<ListItemButton>
 							<ListItemText primary={t(page)} />
 						</ListItemButton>
@@ -113,6 +113,7 @@ const Header = () => {
 							<HeaderButton
 								key={page}
 								endIcon={<KeyboardArrowDownIcon />}
+								href={`/${t(page)}`}
 								sx={{
 									fontSize: {xs: '15px', sm: '16px', lg: '18px'},
 									paddingLeft: {xs: '10px', lg: '25px'},
