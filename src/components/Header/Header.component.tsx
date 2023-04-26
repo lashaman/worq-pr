@@ -76,8 +76,8 @@ const Header = () => {
 		>
 			<List>
 				{pages.map((page, index) => (
-					<ListItem key={page + index} href={`/${t(page)}`}>
-						<ListItemButton>
+					<ListItem key={page + index} >
+						<ListItemButton href={`/${t(page)}`}>
 							<ListItemText primary={t(page)} />
 						</ListItemButton>
 					</ListItem>
