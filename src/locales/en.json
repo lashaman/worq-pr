@@ -1,5 +1,6 @@
 {
   "bookDemo.short": "Book a demo",
+  "bookDemo.long": "Book a demo with us",
   "header.menu.item1": "Products",
   "header.menu.item2": "Services",
   "header.menu.item3": "Solutions",
@@ -53,5 +54,18 @@
   "testimonials.second.companyRepresentative.position": "Operations Specialist",
   "footer.contactUs.follow.title": "Follow Us",
   "footer.copyright": "© 2021 Worq Pty Ltd. All rights reserved.",
-  "footer.privacyPolicy": "Privacy Policy"
+  "footer.privacyPolicy": "Privacy Policy",
+  "productPage.pageHeader.title": "Ensure Quality Work",
+  "productPage.pageHeader.description": "Empower quality managers and auditors with actionable insights and \nevidence both during and after work",
+  "productPage.pageFooter.title": "Improve Work Quality",
+  "productPage.list.monitor.title": "<span>Track work</span> while it is \nbeing done",
+  "productPage.list.monitor.description": "Activity feeds, dashboards and analytics will empower managers to <span>real-time information</span>",
+  "productPage.list.analysis.title": "<span>Perform audits</span> \non work",
+  "productPage.list.analysis.description": "<span>Auditors can plan and execute audits</span> on past work and identify issues at a granular level",
+  "productPage.list.customerService.title":  "<span>Live video</span> \nfeeds",
+  "productPage.list.customerService.description":  "Spot issues, provide technical assistance and training <span>for a distributed workforce</span>",
+  "productPage.list.ai.title": "<span>Predict issues</span> likely \nto occur",
+  "productPage.list.ai.description": "<span>Use AI to predict</span> likely issues based on past work, audits and user profiles",
+  "productPage.list.dashboard.title":  "Setup and measure \n<span>quality</span>",
+  "productPage.list.dashboard.description":  "<span>Create any number of quality metrics</span> to instill an outcome-driven practice"
 }
