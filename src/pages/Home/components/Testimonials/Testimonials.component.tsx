@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import Colors from '../../../../config/colors';
-import {Box, Grid, IconButton, styled, Typography} from '@mui/material';
+import {Box, Grid, IconButton, styled, Typography, useMediaQuery, useTheme} from '@mui/material';
 import Container from '@mui/material/Container';
 import TestimonialsCard from '../../../../components/TestimonialsCard/TestimonialsCard.component';
 import {Trans, useTranslation} from 'react-i18next';
@@ -12,6 +12,7 @@ import {Navigation, Pagination, Virtual} from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 const TestimonialsContainer = styled(Container)`
 	display: flex;
@@ -56,8 +57,19 @@ const TestimonialsControlsGrid = styled(Grid)`
 	justify-content: flex-end;
 `;
 
+const CustomSwiper = styled(Swiper)`
+	padding-bottom: 50px;
+	& > .swiper-wrapper {
+		& > .sriper-pagination {
+			top: 10px;
+    }
+  }
+`;
+
 const Testimonials = () => {
 	const {t} = useTranslation();
+	const theme = useTheme();
+	const showPagination = useMediaQuery(theme.breakpoints.down('md'));
 	const testimonialsList: TestimonialsInterface[] = [
 		{
 			description: <Trans i18nKey="testimonials.first.description" components={{span: <span />, p: <p />}} />,
@@ -97,7 +109,7 @@ const Testimonials = () => {
 	};
 
 	return (
-		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}, padding: {xs: '50px 16px' , lg: '100px 0'}}}>
+		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}, padding: {xs: '50px 16px 20px 16px' , lg: '100px 0'}}}>
 			<TestimonialsBox>
 				<Grid container>
 					<Grid item xs={12}>
@@ -131,21 +143,19 @@ const Testimonials = () => {
 					</Grid>
 				</Grid>
 				<Grid container className="swiper-container" >
-					<Swiper
-						modules={[Navigation, Pagination, Virtual]}
-						spaceBetween={20}
+					<CustomSwiper
+						modules={[Navigation, Pagination]}
+						pagination={showPagination}
 						breakpoints={{
 							0: {
 								slidesPerView: 1,
-								spaceBetween: 30,
+								spaceBetween: 20,
 							},
 							1024: {
-								width: 959,
 								slidesPerView: 1,
 								spaceBetween: 30,
 							},
 							1280: {
-								width: 1280,
 								slidesPerView: 2,
 								spaceBetween: 20,
 							},
@@ -171,14 +181,13 @@ const Testimonials = () => {
 								setNextButtonDisabled(false);
 							}
 						}}
-						virtual
 					>
 						{testimonialsList.map((testimonial: TestimonialsInterface, index: number) => (
 							<SwiperSlide key={index} virtualIndex={index} >
 								<TestimonialsCard {...testimonial}/>
 							</SwiperSlide>
 						))}
-					</Swiper>
+					</CustomSwiper>
 				</Grid>
 			</TestimonialsBox>
 		</TestimonialsContainer>

@@ -5,6 +5,10 @@ import {TestimonialsInterface} from '../../interfaces/testimonials.interface';
 
 
 const TestimonialsCustomCard = styled(Card)`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
   width: 100%;
   border-radius: 30px;
   box-shadow: -3px 42px 25px rgba(41, 0, 102, 0.01), -1px 19px 19px rgba(41, 0, 102, 0.02), 0 5px 10px rgba(41, 0, 102, 0.02), 0 0 0 rgba(41, 0, 102, 0.02);
@@ -21,7 +25,6 @@ const TestimonialDescription = styled(Typography)`
 	line-height: 1.15;
 	&  span {
 		font-family: 'Poppins bold';
-		font-weight: 900;
 	}
 `;
 

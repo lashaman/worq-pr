@@ -2,7 +2,6 @@ import {styled} from '@mui/material';
 import Button from '@mui/material/Button';
 import Colors from '../../config/colors';
 
-
 export const MainButton = styled(Button)`
 	background-color: ${Colors.purple};
 	color: ${Colors.purpleLighter};
@@ -14,6 +13,9 @@ export const MainButton = styled(Button)`
     background-color: ${Colors.purple};
     color: ${Colors.purpleLighter};
 		opacity: 0.8;
+	},
+	@media (min-width: 0px) {
+		font-size: 14px;
 	},
 	@media (min-width: 900px) {
 		font-size: 16px;

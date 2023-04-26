@@ -97,19 +97,19 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 				alignItems="center"
 			>
 				<ProductCardHeader
-					sx={{paddingBottom: {xs: '15px', lg: '20px'}}}
+					sx={{paddingBottom: {xs: '16px', lg: '20px'}}}
 					avatar={
 						<ProductIconBox  sx={ {height: {xs:'60px', lg: '83px'}, width: {xs:'60px', lg: '83px'}}}>
 							<img src={icon} alt="O"/>
 						</ProductIconBox>
 					}
 					title={
-						<ProductTitle variant="h3" sx={{fontSize: {xs: '20px', lg:'31px'}}}>
+						<ProductTitle variant="h3" sx={{fontSize: {xs: '24px', lg:'30px'}}}>
 							{title}
 						</ProductTitle>
 					}
 				/>
-				<ProductCardContent sx={{height: {xs: '96px', lg: '81px'}, paddingBottom: {xs: '15px', lg: '20px'}}}>
+				<ProductCardContent sx={{height: {xs: '96px', lg: '81px'}, paddingBottom: {xs: '16px', lg: '20px'}}}>
 					<ProductDescription sx={{fontSize: {xs: '15px', lg:'18px'}}}>
 						{description}
 					</ProductDescription>

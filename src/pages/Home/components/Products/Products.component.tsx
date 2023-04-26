@@ -6,6 +6,7 @@ import React from 'react';
 import ProductCard from '../../../../components/ProductCard/ProductCard.component';
 import {Trans, useTranslation} from 'react-i18next';
 import HowWeHelp from '../../../../assets/images/how-we-help.png';
+import DataAnalysis from '../../../../assets/images/data-analysis.png';
 import CrownIcon from '../../../../assets/icons/crown.svg';
 import BadgeCheckIcon from '../../../../assets/icons/badge-check.svg';
 import ShieldCheckIcon from '../../../../assets/icons/shield-check.svg';
@@ -24,20 +25,16 @@ const ProductsContainer = styled(Container)`
 `;
 
 const ProductsGrid = styled(Grid)`
-	max-width: 100%;
 	padding: 63px 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 auto;
 `;
 
 const ProductImage = styled(Box)`
   width: 100%;
-  height: 288px;
   border-radius: 30px;
-	background-image: url(${HowWeHelp});
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -51,10 +48,9 @@ const ProductImageTitle = styled(Typography)`
   font-family: 'Avenir Black';
 	display: flex;
 	height: 100%;
-	padding: 0 100px;
 	align-items: center;
 	text-align: center;
-	justify-content: end;
+	justify-content: center;
 	font-weight: 900;
 	white-space: pre;
 	color: ${Colors.purpleDark};
@@ -121,12 +117,24 @@ const ProductsComponent = () => {
 		<>
 			<hr style={{borderTop: `1px solid ${Colors.purple}`}}/>
 			<ProductsContainer maxWidth={false}>
-				<ProductsGrid container spacing={ {xs: 1, md: 2.5}}>
-					<Grid item xs={12} md={8}>
-						<ProductImage>
-							<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}}}>
-								{t('products.productImage.title')}
-							</ProductImageTitle>
+				<ProductsGrid container spacing={ {xs: 1.5, md: 2.5}}>
+					<Grid item xs={12} md={8} >
+						<ProductImage sx={{backgroundImage: `url(${HowWeHelp})`, height: {xs: '397px', md: '288px;'}}}>
+							<Grid
+								container
+								direction={{xs: 'column-reverse', md: 'row'}}
+								justifyContent="space-around"
+								alignItems="center"
+							>
+								<Grid item xs={12} md={5} >
+									<Box component="img" src={DataAnalysis} sx={{padding: {xs: '0 10px', md: '0 20px'}}}/>
+								</Grid>
+								<Grid item xs={12} md={7}>
+									<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}, padding: {xs: '50px 0 0 0', md: 'unset'}}}>
+										{t('products.productImage.title')}
+									</ProductImageTitle>
+								</Grid>
+							</Grid>
 						</ProductImage>
 					</Grid>
 					{Products.map((product) => (

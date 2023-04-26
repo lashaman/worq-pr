@@ -8,19 +8,6 @@ import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepp
 const ServicesContainer = styled(Container)`
   width: 100%;
 	align-items: center;
-  @media (min-width: 0px) {
-		height: auto;
-  }
-  @media (min-width: 600px) {  
-		padding-left: 0;
-    padding-right: 0;
-  }
-	@media (min-width: 960px) {
-		height: 880px;
-  }
-	@media (min-width: 1280px) {
-		height: 1083px;
-  }
 `;
 
 const ServicesGrid = styled(Grid)`
@@ -122,7 +109,7 @@ const Services = () => {
 		setValue(newValue);
 	};
 	return (
-		<ServicesContainer maxWidth={false}>
+		<ServicesContainer maxWidth={false} sx={{height: {xs: 'auto', md: '880px' , lg: '1083px'}, paddingLeft: {sm: 0}, paddingRight: {sm: 0},}}>
 			<ServicesGrid container sx={{
 				width: {xs: '100%', lg: '1280px'},
 			}}>
