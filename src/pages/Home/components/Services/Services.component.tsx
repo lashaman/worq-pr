@@ -85,6 +85,16 @@ const ServicesList =  [
 	{activeStep: ServiceSteps.Risk, textContent: 'Risk Management'},
 ];
 
+const TabPanelList = [
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
+];
+
 const Services = () => {
 	const [value, setValue] = React.useState(0);
 
@@ -127,136 +137,30 @@ const Services = () => {
 					))}
 				</Grid>
 				<Grid item xs={12} md={5} lg={6}>
-					<TabPanel value={value} index={0}>
-						<ServicesDescriptionTitle  sx={{
-							fontSize: {xs: '12px', sm: '20px', md: '28px', lg: '36px'},
-						}} variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 1
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" sx={{
-							fontSize: {xs: '12px', sm: '14px', md: '16px', lg: '20px'},
-						}} gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={1}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 2
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={2}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 3
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={3}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 4
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={4}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 5
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={5}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 6
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
-					<TabPanel value={value} index={6}>
-						<ServicesDescriptionTitle variant="h4" gutterBottom>
-							<Trans
-								i18nKey="services.description.title"
-								components={{ span: <span />}}
-							/>
-							Tab 7
-						</ServicesDescriptionTitle>
-						<ServicesDescription variant="body1" gutterBottom>
-							<Trans
-								i18nKey="services.description.text"
-								components={{ span: <span />}}
-							/>
-						</ServicesDescription>
-						<MainButton variant="contained"  >
-							<Trans i18nKey="services.description.button" />
-						</MainButton>
-					</TabPanel>
+					{TabPanelList.map((item, index) => (
+						<TabPanel key={index} value={value} index={index}>
+							<ServicesDescriptionTitle  sx={{
+								fontSize: {xs: '22px', md: '28px', lg: '36px'},
+							}} variant="h4" gutterBottom>
+								<Trans
+									i18nKey={item.title}
+									components={{ span: <span />}}
+								/>
+								Tab {index + 1}
+							</ServicesDescriptionTitle>
+							<ServicesDescription variant="body1" sx={{
+								fontSize: {xs: '16px', md: '16px', lg: '20px'},
+							}} gutterBottom>
+								<Trans
+									i18nKey={item.text}
+									components={{ span: <span />}}
+								/>
+							</ServicesDescription>
+							<MainButton variant="contained"  >
+								<Trans i18nKey={item.button} />
+							</MainButton>
+						</TabPanel>
+					))}
 				</Grid>
 				<Grid item xs={12} sx={{display: {md: 'none'}}}>
 					{ServicesList.slice(2,7).map((item, index) => (
