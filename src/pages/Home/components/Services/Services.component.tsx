@@ -24,7 +24,6 @@ const ServicesGrid = styled(Grid)`
 const ServicesTitle = styled(Typography)`
   font-family: 'Avenir Black';
   display: flex;
-  font-size: 3rem;
   font-weight: 700;
 	justify-content: center;
   & > span {
@@ -108,7 +107,7 @@ const Services = () => {
 				width: {xs: '100%', lg: '1280px'},
 			}}>
 				<Grid item xs={12}>
-					<ServicesTitle variant="h3"  gutterBottom>
+					<ServicesTitle variant="h3" sx={{fontSize: {xs: '28px', md: '40px', lg: '48px'}}}  gutterBottom>
 						<Trans
 							i18nKey="services.title"
 							components={{ span: <span />}}
