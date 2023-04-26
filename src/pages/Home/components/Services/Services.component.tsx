@@ -105,7 +105,7 @@ const Services = () => {
 						/>
 					</ServicesTitle>
 				</Grid>
-				<Grid item md={7} lg={6} sx={{display: {xs: 'none', md: null}}}>
+				<Grid item md={7} lg={6} sx={{display: {xs: 'none', md: 'block'}}}>
 					<StepperBox>
 						<ServicesStepper changeStep={handleChange}/>
 					</StepperBox>
