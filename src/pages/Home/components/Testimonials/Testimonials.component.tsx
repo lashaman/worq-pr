@@ -7,8 +7,8 @@ import {Trans, useTranslation} from 'react-i18next';
 import {TestimonialsInterface} from '../../../../interfaces/testimonials.interface';
 import TestimonialsCompanyIcon from '../../../../assets/images/testimonials-company.png';
 import {Right} from '../../../../components/JsxIcons/JsxIcons.component';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination, Virtual} from 'swiper';
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/react';
+import {Navigation, Pagination} from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -100,13 +100,7 @@ const Testimonials = () => {
 	const [nextButtonDisabled, setNextButtonDisabled] = useState(false);
 	const [prevButtonDisabled, setPrevButtonDisabled] = useState(false);
 
-	const handlePrev = (e: any) => {
-		e.target.closest('.swiper-container')?.swiper.slidePrev();
-	};
-
-	const handleNext = (e: any) => {
-		e.target.closest('.swiper-container')?.swiper.slideNext();
-	};
+	const swiper = useSwiper();
 
 	return (
 		<TestimonialsContainer maxWidth={false} sx={{height: {md: '593px', lg: '822px'}, padding: {xs: '50px 16px 20px 16px' , lg: '100px 0'}}}>
@@ -133,10 +127,10 @@ const Testimonials = () => {
 							</TestimonialsSubTitle>
 						</Grid>
 						<TestimonialsControlsGrid item xs={2} sx={{display: {xs: 'none', md: 'flex'}}}>
-							<IconButton color="primary"  component="label" className="prev-button" onClick={handlePrev}>
+							<IconButton color="primary"  component="label" className="prev-button" onClick={() => swiper?.slidePrev()}>
 								<Right left={true} disabled={prevButtonDisabled}/>
 							</IconButton>
-							<IconButton color="primary"  component="label" className="next-button" onClick={handleNext}>
+							<IconButton color="primary"  component="label" className="next-button" onClick={() => swiper?.slideNext()}>
 								<Right disabled={nextButtonDisabled}/>
 							</IconButton>
 						</TestimonialsControlsGrid>
