@@ -124,7 +124,7 @@ const Header = () => {
 							</HeaderButton>
 						))}
 					</HeaderBox>
-					<MainButton  sx={{ display: { xs: 'none', md: 'block' } }} >Book a Demo</MainButton>
+					<MainButton  sx={{ display: { xs: 'none', md: 'block' } }} >{t('bookDemo.short')}</MainButton>
 					<IconButton  sx={{ display: { xs: 'block', md: 'none' } }} onClick={toggleDrawer('right', true)}><MenuIcon/></IconButton>
 					<Drawer
 						sx={{ display: { xs: 'block', md: 'none' } }}

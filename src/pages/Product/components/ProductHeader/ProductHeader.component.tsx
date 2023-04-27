@@ -22,7 +22,7 @@ const ProductHeader = () => {
 	const {t} = useTranslation();
 	return (
 		<>
-			<ProductHeaderPaper elevation={0} sx={{padding: {xs: '50px 0', md: '70px 0', lg: '100px 0'}}}>
+			<ProductHeaderPaper elevation={0} sx={{padding: {xs: '50px 16px', md: '70px 0', lg: '100px 0'}}}>
 				<Grid container maxWidth="1280px" justifyContent="flex-start">
 					<Grid item xs={12} >
 						<ProductHeaderTitle sx={{fontSize: {xs: '40px', md: '48px' , lg: '68px'}}}>
