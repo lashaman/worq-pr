@@ -67,5 +67,10 @@
   "productPage.list.ai.title": "<span>Predict issues</span> likely \nto occur",
   "productPage.list.ai.description": "<span>Use AI to predict</span> likely issues based on past work, audits and user profiles",
   "productPage.list.dashboard.title":  "Setup and measure \n<span>quality</span>",
-  "productPage.list.dashboard.description":  "<span>Create any number of quality metrics</span> to instill an outcome-driven practice"
+  "productPage.list.dashboard.description":  "<span>Create any number of quality metrics</span> to instill an outcome-driven practice",
+  "servicePage.sidebar.tabPanel.title": "Our <span>Services</span>",
+  "servicePage.sidebar.newsPanel.title": "Latest <span>News</span>",
+  "servicePage.sideBar.newsPanel.news1": "Australian standard for the hygienic production",
+  "servicePage.sideBar.newsPanel.news2": "WORQ is an incredibly flexible platform, that",
+  "servicePage.sideBar.newsPanel.news3": "Digitally transform your utilities company"
 }

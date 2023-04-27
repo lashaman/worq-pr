@@ -9,6 +9,7 @@ import '@fontsource/roboto/700.css';
 import Product from '../pages/Product/Product.page';
 import Header from '../components/Header/Header.component';
 import Footer from '../components/Footer/Footer.component';
+import Services from '../pages/Services/Services.page';
 
 const App = () => (
 	<>
@@ -16,6 +17,7 @@ const App = () => (
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/Products" element={<Product />} />
+			<Route path="/Services" element={<Services />} />
 			<Route path="*" element={<div>404</div>} />
 		</Routes>
 		<Footer />

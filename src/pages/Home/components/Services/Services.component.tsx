@@ -4,8 +4,9 @@ import {Trans} from 'react-i18next';
 import Colors from '../../../../config/colors';
 import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';
 import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepper.component';
-import TabPanel from './TabPanel.component';
+import TabPanel from '../../../../components/TabPanel/TabPanel.component';
 import {ServiceSteps} from '../../../../enums/ServiceSteps';
+import {ServicesList, TabPanelList} from '../../../../config/services-lists';
 
 const ServicesContainer = styled(Container)`
   width: 100%;
@@ -74,31 +75,11 @@ const StepperBox = styled(Box)`
 `;
 
 
-const ServicesList =  [
-	{activeStep: ServiceSteps.Compliance, textContent: 'Compliance & Regulation'},
-	{activeStep: ServiceSteps.SOP, textContent: 'SOP’s & Work Instructions'},
-	{activeStep: ServiceSteps.Assessments, textContent: 'Assessments'},
-	{activeStep: ServiceSteps.Training, textContent: 'Training'},
-	{activeStep: ServiceSteps.Audits, textContent: 'Audits'},
-	{activeStep: ServiceSteps.Consulting, textContent: 'Consulting'},
-	{activeStep: ServiceSteps.Risk, textContent: 'Risk Management'},
-];
-
-const TabPanelList = [
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-	{title: 'services.description.title', text: 'services.description.text',  button: 'services.description.button'},
-];
 
 const Services = () => {
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-		console.log(newValue);
 		setValue(newValue);
 	};
 	return (
