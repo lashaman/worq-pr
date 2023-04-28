@@ -61,7 +61,7 @@ const ProductCardActions = styled(CardActions)`
 `;
 
 const ProductCardButton = styled(Button)`
-	font-family: 'Avenir medium';
+	font-family: 'Avenir Medium';
 	text-transform: none;
 	display: flex;
 	align-items: center;
