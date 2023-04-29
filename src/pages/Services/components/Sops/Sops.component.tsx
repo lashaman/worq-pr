@@ -1,4 +1,4 @@
-import {Box, Grid, Paper, Stack, styled, Typography} from '@mui/material';
+import {Box, Grid, Paper, styled, Typography} from '@mui/material';
 import {Trans} from 'react-i18next';
 import React from 'react';
 import PageHero from '../../../../assets/images/page-hero.png';

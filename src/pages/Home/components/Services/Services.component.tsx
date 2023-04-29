@@ -5,7 +5,6 @@ import Colors from '../../../../config/colors';
 import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';
 import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepper.component';
 import TabPanel from '../../../../components/TabPanel/TabPanel.component';
-import {ServiceSteps} from '../../../../enums/ServiceSteps';
 import {ServicesList, TabPanelList} from '../../../../config/services-lists';
 
 const ServicesContainer = styled(Container)`

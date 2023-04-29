@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled} from '@mui/material';
-import {ServicesList} from '../../../../config/services-lists';
 import Colors from '../../../../config/colors';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
