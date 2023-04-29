@@ -72,5 +72,13 @@
   "servicePage.sidebar.newsPanel.title": "Latest <span>News</span>",
   "servicePage.sideBar.newsPanel.news1": "Australian standard for the hygienic production",
   "servicePage.sideBar.newsPanel.news2": "WORQ is an incredibly flexible platform, that",
-  "servicePage.sideBar.newsPanel.news3": "Digitally transform your utilities company"
+  "servicePage.sideBar.newsPanel.news3": "Digitally transform your utilities company",
+  "servicePage.hero.title": "<span>SOPs & Work</span> \nInstructions",
+  "servicePage.awesomeServices.title": "Awesome Services Grow Your Business Value",
+  "servicePage.awesomeServices.description": "<span>Our service help businesses and organizations</span> create and maintain clear, concise, and effective standard operating procedures and work instructions.",
+  "servicePage.awesomeServices.listItem.description": "<p>This service streamlines organizational processes by defining and documenting procedures, creating user-friendly instructions, and providing training and support.</p><p>The aim is to improve efficiency, standardization, and quality control, reduce errors and non-compliance risk, and provide clear guidance for employees and stakeholders.</p><p>The service provider uses techniques such as process mapping, flowcharting, and task analysis to create comprehensive and accurate documents.</p>",
+  "servicePage.serviceCard.first.title": "Lorem ipsum",
+  "servicePage.serviceCard.first.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non ligula cursus, pharetra odio.",
+  "servicePage.serviceCard.second.title": "Phasellus quis nibh",
+  "servicePage.serviceCard.second.description": "Vestibulum facilisis turpis sed mauris semper, dapibus placerat libero pharetra. Vestibulum."
 }

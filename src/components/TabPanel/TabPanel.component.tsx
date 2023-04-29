@@ -5,10 +5,11 @@ interface TabPanelProps {
 	children?: React.ReactNode;
 	index: number;
 	value: number;
+	padding?: number;
 }
 
 const TabPanel = (props: TabPanelProps) => {
-	const { children, value, index, ...other } = props;
+	const { children, value, index, padding = 3, ...other } = props;
 
 	return (
 		<div
@@ -20,7 +21,7 @@ const TabPanel = (props: TabPanelProps) => {
 		>
 			{value === index && (
 				<Fade in={value === index}>
-					<Box sx={{ p: 3 , transition: 'all 0.4s ease-in-out'}}>
+					<Box sx={{ p: padding, transition: 'all 0.4s ease-in-out'}}>
 						{children}
 					</Box>
 				</Fade>

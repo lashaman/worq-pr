@@ -21,7 +21,7 @@ const SidebarTitle = styled(Typography)`
 const SidebarPaper = ({title, fontSize, children}: ServiceSidebarTitleProps) => {
 	return (
 		<Paper elevation={0} sx={{backgroundColor: Colors.purpleLighter, padding: '20px', borderRadius: '30px'}}>
-			<SidebarTitle variant="h4" sx={{...fontSize}}>
+			<SidebarTitle sx={{fontSize: fontSize}}>
 				<Trans
 					i18nKey={title}
 					components={{span: <span/>}}

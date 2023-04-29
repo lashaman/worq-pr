@@ -105,9 +105,11 @@ const Header = () => {
 		<HeaderAppBar sx={{height: {xs: '90px', md: '100px'}}}>
 			<CustomContainer>
 				<HeaderToolbar disableGutters sx={{justifyContent: {xs: 'space-between', md: 'center'}}}>
-					<Box component="img" src={LogoMain} alt="LOGO" sx={{
-						width: { xs: '149.7px', lg: '199.61px'}
-					}} />
+					<Button href={'/'} sx={{padding: '0'}}>
+						<Box component="img" src={LogoMain} alt="LOGO" sx={{
+							width: { xs: '149.7px', lg: '199.61px'}
+						}} />
+					</Button>
 					<HeaderBox sx={{ display: { xs: 'none', md: 'block' } }}>
 						{pages.map((page) => (
 							<HeaderButton

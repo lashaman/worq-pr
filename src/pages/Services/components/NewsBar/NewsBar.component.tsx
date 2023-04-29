@@ -10,36 +10,19 @@ import CardTitle from './components/CardTitle/CardTitle.component';
 import Subheader from './components/Subheader/Subheader.component';
 import addThreeDots from '../../../../Utils/AddThreeDots.util';
 import FormatUnixTimeStamp from '../../../../Utils/FormatUnixTimeStamp';
+import {News} from '../../../../interfaces/news.interface';
 
-const News = [
-	{
-		text: 'servicePage.sideBar.newsPanel.news1',
-		image: News1,
-		date: 1619628810,
-	},
-	{
-		text: 'servicePage.sideBar.newsPanel.news2',
-		image: News2,
-		date: 1612198410,
-	},
-	{
-		text: 'servicePage.sideBar.newsPanel.news3',
-		image: News3,
-		date: 1682700861
-	},
-];
+interface NewsBarProps {
+	news: News[];
+	textMaxLength: number;
+	isScreenDesktop: boolean;
+}
 
-const maxTextLength = 48;
-
-
-
-const NewsBar = () => {
+const NewsBar = ({news, textMaxLength, isScreenDesktop}: NewsBarProps) => {
 	const {t} = useTranslation();
-	const theme = useTheme();
-	const isScreenDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 	return (
 		<SidebarPaper title="servicePage.sidebar.newsPanel.title" fontSize={{xs: '24px', md: '20px', lg: '24px'}}>
-			{News.map((news, index) => (
+			{news.map((news, index) => (
 				<Card sx={{backgroundColor: 'transparent', boxShadow: 'none'}} raised={false} key={index}>
 					<CardHeader
 						sx={{overflow: 'hidden'}}
@@ -47,7 +30,7 @@ const NewsBar = () => {
 							<Box component="img" height="86px" src={news.image}  alt="1" />
 						}
 						title={
-							<CardTitle text={addThreeDots(t(news.text), maxTextLength)} />
+							<CardTitle text={addThreeDots(t(news.text), textMaxLength)} />
 						}
 						subheader={
 							isScreenDesktop ? <Subheader date={FormatUnixTimeStamp(news.date)} /> : ''
