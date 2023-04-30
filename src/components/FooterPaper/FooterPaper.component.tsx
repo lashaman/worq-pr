@@ -1,8 +1,6 @@
 import React from 'react';
 import {Grid, Paper, styled, Typography} from '@mui/material';
 import Colors from '../../config/colors';
-import { useTranslation } from 'react-i18next';
-import {MainButton} from '../Buttons/Buttons.component';
 import Box from '@mui/material/Box';
 const ProductFooterPaper = styled(Paper)`
 	display: flex;
