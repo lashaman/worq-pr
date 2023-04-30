@@ -16,6 +16,8 @@ import SparklesIcon from '../../../../assets/icons/sparkles.svg';
 import BooksIcon from '../../../../assets/icons/books.svg';
 import Colors from '../../../../config/colors';
 import {Product} from '../../../../interfaces/product.interface';
+import {useTheme} from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const ProductsContainer = styled(Container)`
 	max-width: 1280px;
@@ -110,6 +112,9 @@ const ProductsComponent = () => {
 		}
 	];
 
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 	const ProductCardClickHandler = (id: number) => {
 		console.log(id);
 	};
@@ -122,12 +127,12 @@ const ProductsComponent = () => {
 						<ProductImage sx={{backgroundImage: `url(${HowWeHelp})`, height: {xs: '397px', md: '288px;'}}}>
 							<Grid
 								container
-								direction={{xs: 'column-reverse', md: 'row'}}
+								direction={isMobile ?  'column-reverse' : 'row'}
 								justifyContent="space-around"
 								alignItems="center"
 							>
 								<Grid item xs={12} md={5} >
-									<Box component="img" src={DataAnalysis} sx={{padding: {xs: '0 10px', md: '0 20px'}}}/>
+									<Box component="img" src={DataAnalysis} />
 								</Grid>
 								<Grid item xs={12} md={7}>
 									<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}, padding: {xs: '50px 0 0 0', md: 'unset'}}}>
