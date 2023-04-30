@@ -19,7 +19,9 @@ import Colors from '../../config/colors';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
-const pages = ['header.menu.item1', 'header.menu.item2', 'header.menu.item3', 'header.menu.item4'];
+import pages from '../../config/pages';
+import worqRoutes from '../../config/routes';
+
 
 export const HeaderButton = styled(Button)`
 	font-family: 'Avenir Heavy';
@@ -76,9 +78,9 @@ const Header = () => {
 		>
 			<List>
 				{pages.map((page, index) => (
-					<ListItem key={page + index} >
-						<ListItemButton href={`/${t(page)}`}>
-							<ListItemText primary={t(page)} />
+					<ListItem key={page.key + index} >
+						<ListItemButton href={page.route}>
+							<ListItemText primary={t(page.key)} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -105,7 +107,7 @@ const Header = () => {
 		<HeaderAppBar sx={{height: {xs: '90px', md: '100px'}}}>
 			<CustomContainer>
 				<HeaderToolbar disableGutters sx={{justifyContent: {xs: 'space-between', md: 'center'}}}>
-					<Button href={'/'} sx={{padding: '0'}}>
+					<Button href={worqRoutes.home} sx={{padding: '0'}}>
 						<Box component="img" src={LogoMain} alt="LOGO" sx={{
 							width: { xs: '149.7px', lg: '199.61px'}
 						}} />
@@ -113,16 +115,16 @@ const Header = () => {
 					<HeaderBox sx={{ display: { xs: 'none', md: 'block' } }}>
 						{pages.map((page) => (
 							<HeaderButton
-								key={page}
+								key={page.key}
 								endIcon={<KeyboardArrowDownIcon />}
-								href={`/${t(page)}`}
+								href={page.route}
 								sx={{
 									fontSize: {xs: '15px', sm: '16px', lg: '18px'},
 									paddingLeft: {xs: '10px', lg: '25px'},
 									paddingRight: {xs: '10px', lg: '25px'},
 								}}
 							>
-								{t(page)}
+								{t(page.key)}
 							</HeaderButton>
 						))}
 					</HeaderBox>

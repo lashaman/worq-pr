@@ -21,23 +21,17 @@ export const FatPhone = ({style}: PhoneProps) => (<svg  style={style} width="20"
 </svg>
 );
 
-export const ServicePageHero = () => (<svg width="847" height="353" viewBox="0 0 847 353" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<g clipPath="url(#clip0_43_3896)">
-		<rect width="847" height="353" fill="#EFEEFF" fillOpacity="0.4"/>
-		<g filter="url(#filter0_f_43_3896)">
-			<circle cx="799.5" cy="48.5" r="100.5" fill="#A39EF8"/>
-		</g>
+export const LinkedInCustomIcon = () => (<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect x="0.5" y="0.5" width="41" height="41" rx="11.5" fill="white" stroke="#007EBB"/>
+	<g clipPath="url(#clip0_161_179)">
+		<path d="M16.19 17.7908H12.5765C12.4161 17.7908 12.2861 17.9208 12.2861 18.0811V29.6898C12.2861 29.8502 12.4161 29.9801 12.5765 29.9801H16.19C16.3504 29.9801 16.4803 29.8502 16.4803 29.6898V18.0811C16.4803 17.9208 16.3504 17.7908 16.19 17.7908Z" fill="#007EBB"/>
+		<path d="M14.3845 12.0198C13.0697 12.0198 12 13.0883 12 14.4016C12 15.7156 13.0697 16.7845 14.3845 16.7845C15.6982 16.7845 16.767 15.7155 16.767 14.4016C16.7671 13.0883 15.6982 12.0198 14.3845 12.0198Z" fill="#007EBB"/>
+		<path d="M25.3812 17.5022C23.9299 17.5022 22.857 18.1261 22.2063 18.835V18.081C22.2063 17.9207 22.0763 17.7907 21.9159 17.7907H18.4554C18.295 17.7907 18.165 17.9207 18.165 18.081V29.6898C18.165 29.8501 18.295 29.9801 18.4554 29.9801H22.061C22.2214 29.9801 22.3513 29.8501 22.3513 29.6898V23.9461C22.3513 22.0107 22.877 21.2566 24.2262 21.2566C25.6956 21.2566 25.8124 22.4654 25.8124 24.0457V29.6898C25.8124 29.8502 25.9423 29.9801 26.1027 29.9801H29.7097C29.87 29.9801 30 29.8502 30 29.6898V23.3222C30 20.4443 29.4512 17.5022 25.3812 17.5022Z" fill="#007EBB"/>
 	</g>
 	<defs>
-		<filter id="filter0_f_43_3896" x="399" y="-352" width="801" height="801" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-			<feFlood floodOpacity="0" result="BackgroundImageFix"/>
-			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-			<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_43_3896"/>
-		</filter>
-		<clipPath id="clip0_43_3896">
-			<rect width="847" height="353" fill="white"/>
+		<clipPath id="clip0_161_179">
+			<rect width="18" height="18" fill="white" transform="translate(12 12)"/>
 		</clipPath>
 	</defs>
 </svg>
 );
-

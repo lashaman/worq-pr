@@ -10,15 +10,19 @@ import Product from '../pages/Product/Product.page';
 import Header from '../components/Header/Header.component';
 import Footer from '../components/Footer/Footer.component';
 import Services from '../pages/Services/Services.page';
+import worqRoutes from '../config/routes';
+import About from '../pages/About/About.page';
+import ErrorPage from '../pages/Error/Error.page';
 
 const App = () => (
 	<>
 		<Header />
 		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/Products" element={<Product />} />
-			<Route path="/Services" element={<Services />} />
-			<Route path="*" element={<div>404</div>} />
+			<Route path={worqRoutes.home} element={<Home />} />
+			<Route path={worqRoutes.products} element={<Product />} />
+			<Route path={worqRoutes.services} element={<Services />} />
+			<Route path={worqRoutes.about} element={<About />} />
+			<Route path="*" element={<ErrorPage />} />
 		</Routes>
 		<Footer />
 	</>

@@ -1,6 +1,7 @@
 {
   "bookDemo.short": "Book a demo",
   "bookDemo.long": "Book a demo with us",
+  "Discover.short": "Discover",
   "header.menu.item1": "Products",
   "header.menu.item2": "Services",
   "header.menu.item3": "Solutions",
@@ -80,5 +81,12 @@
   "servicePage.serviceCard.first.title": "Lorem ipsum",
   "servicePage.serviceCard.first.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non ligula cursus, pharetra odio.",
   "servicePage.serviceCard.second.title": "Phasellus quis nibh",
-  "servicePage.serviceCard.second.description": "Vestibulum facilisis turpis sed mauris semper, dapibus placerat libero pharetra. Vestibulum."
+  "servicePage.serviceCard.second.description": "Vestibulum facilisis turpis sed mauris semper, dapibus placerat libero pharetra. Vestibulum.",
+  "aboutPage.description.title": "We are proudly <span>Australian \nowned and operated.</span>",
+  "aboutPage.description.text": "<p><span>Our objective is to enable a dramatic improvement in work quality</span> and an equally significant reduction in defects and accidents, delivering major productivity gains for any company or agency anywhere in the world.</p>\n<p>It is a fact that <span>organizations are spending a lot of time and money fixing up avoidable mistakes.</span> These mistakes cause reputational harm, result in injuries and cost businesses billions of dollars every year.</p>\n<p><span>Our Platform is designed to give staff, managers and quality practitioners the tools to ensure that work is systemized where it can be,</span> giving all organizations the ability to operate with the systemization of NASA or McDonalds, while providing highly complex, but easily utilized services and capabilities.</p>",
+  "aboutPage.team.title": "<span>We work together</span>, as a \nseamless team",
+  "aboutPage.mobileDescription": "Revolutionizing Work Quality: The Platform for Dramatic Improvements",
+  "errorPage.title": "404 Page not found",
+  "errorPage.description": "The page you’re looking for doesn’t exist. Try to search again or use the Go Back button below.",
+  "errorPage.button.title": "Go Back"
 }

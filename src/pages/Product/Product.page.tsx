@@ -1,15 +1,12 @@
 import React from 'react';
 import {Container, Grid, styled} from '@mui/material';
 import ProductHeader from './components/ProductHeader/ProductHeader.component';
-import ProductFooter from './components/ProductFooter/ProductFooter.component';
-import {CustomCardProps} from '../../interfaces/custom-card-props.interface';
-import Monitor from '../../assets/icons/monitor.svg';
-import Ai from '../../assets/icons/ai.svg';
-import CustomerService from '../../assets/icons/customer-service.svg';
-import Dashboard from '../../assets/icons/dashboard.svg';
-import Analysis from '../../assets/icons/analysis.svg';
 import ProductPageCard from './components/ProductPageCard/ProductPageCard.component';
 import Colors from '../../config/colors';
+import ProductList from '../../config/product-list';
+import FooterPaper from '../../components/FooterPaper/FooterPaper.component';
+import {MainButton} from '../../components/Buttons/Buttons.component';
+import {useTranslation} from 'react-i18next';
 
 
 const ProductPageGrid = styled(Grid)`
@@ -38,46 +35,36 @@ const ProductPageGrid = styled(Grid)`
 `;
 
 const Product = () => {
-	const ProductList: CustomCardProps[] = [
-		{
-			title: 'productPage.list.monitor.title',
-			description: 'productPage.list.monitor.description',
-			icon: Monitor,
-		},
-		{
-			title: 'productPage.list.analysis.title',
-			description: 'productPage.list.analysis.description',
-			icon: Analysis,
-		},
-		{
-			title: 'productPage.list.customerService.title',
-			description: 'productPage.list.customerService.description',
-			icon: CustomerService,
-		},
-		{
-			title: 'productPage.list.ai.title',
-			description: 'productPage.list.ai.description',
-			icon: Ai,
-		},
-		{
-			title: 'productPage.list.dashboard.title',
-			description: 'productPage.list.dashboard.description',
-			icon: Dashboard,
-		},
-	];
-
+	const {t} = useTranslation();
 	return (
 		<>
 			<Container maxWidth={false} sx={{paddingLeft: {xs: 0, md: 0}, paddingRight: {xs: 0, md: 0}}}>
 				<ProductHeader/>
-				<ProductPageGrid maxWidth="1280px" container direction="row" justifyContent="flex-start" alignItems="center" sx={{padding: {xs: '50px 16px', md: '70px 0', lg: '100px 0'}}}>
+				<ProductPageGrid
+					maxWidth="1280px"
+					container
+					direction="row"
+					justifyContent="flex-start"
+					alignItems="center"
+					sx={
+						{padding: {xs: '50px 16px', md: '70px 0', lg: '100px 0'}}
+					}>
 					{ProductList.map((item, index) => (
 						<Grid item xs={12} md={6} key={index} sx={{padding: '30px'}}>
 							<ProductPageCard key={index} {...item}/>
 						</Grid>
 					))}
 				</ProductPageGrid>
-				<ProductFooter/>
+				<FooterPaper
+					title={t('productPage.pageFooter.title')}
+					css={{backgroundColor: Colors.purpleLighter}}
+					maxWidth="1075px"
+					gridSplit={{text: 9, button: 3}}
+					elevation={1}>
+					<MainButton sx={{ fontSize: '18px'}}>
+						{t('bookDemo.long')}
+					</MainButton>
+				</FooterPaper>
 			</Container>
 		</>
 	);
