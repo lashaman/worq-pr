@@ -82,7 +82,7 @@ const Services = () => {
 		setValue(newValue);
 	};
 	return (
-		<ServicesContainer maxWidth={false} sx={{height: {xs: 'auto', md: '880px' , lg: '1083px'}, paddingLeft: {sm: 0}, paddingRight: {sm: 0},}}>
+		<ServicesContainer maxWidth={false} sx={{height: {xs: 'auto', md: '880px' , lg: '1083px'}, paddingLeft: {md: 0}, paddingRight: {md: 0},}}>
 			<ServicesGrid container sx={{
 				width: {xs: '100%', lg: '1280px'},
 			}}>

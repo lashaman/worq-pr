@@ -6,7 +6,7 @@ export const CustomContainer = styled(Container)`
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	@media (min-width: 600px) {
+	@media (min-width: 769px) {
     padding-left: 0;
     padding-right: 0;
   }
