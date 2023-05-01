@@ -18,7 +18,7 @@ const About = () => {
 		<Container maxWidth={false} sx={{paddingLeft: {xs: 0, md: 0}, paddingRight: {xs: 0, md: 0}}}>
 			<AboutDescription title="aboutPage.description.title" mobileDescription="aboutPage.mobileDescription" description="aboutPage.description.text"/>
 			<Team title="aboutPage.team.title" teamMembers={TeamMembersList}/>
-			{isDesktop && <FooterPaper title={t('productPage.pageFooter.title')} maxWidth="1280px" gridSplit={{text: 7, button: 5}} elevation={0}>
+			{isDesktop && <FooterPaper title={t('productPage.pageFooter.title')} maxWidth="1280px" xs={7} md={7} lg={7} elevation={0}>
 				<SecondaryButton sx={{ fontSize: '18px'}}>
 					{t('Discover.short')}
 				</SecondaryButton>

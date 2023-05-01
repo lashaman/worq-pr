@@ -124,7 +124,7 @@ const ProductsComponent = () => {
 			<ProductsContainer maxWidth={false}>
 				<ProductsGrid container spacing={ {xs: 1.5, md: 2.5}}>
 					<Grid item xs={12} md={8} >
-						<ProductImage sx={{backgroundImage: `url(${HowWeHelp})`, height: {xs: '397px', md: '288px;'}}}>
+						<ProductImage sx={{backgroundImage: `url(${HowWeHelp})`, height: {xs: '397px', md: '261.4px', lg: '288px;'}}}>
 							<Grid
 								container
 								direction={isMobile ?  'column-reverse' : 'row'}

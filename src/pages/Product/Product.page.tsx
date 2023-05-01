@@ -7,6 +7,7 @@ import ProductList from '../../config/product-list';
 import FooterPaper from '../../components/FooterPaper/FooterPaper.component';
 import {MainButton} from '../../components/Buttons/Buttons.component';
 import {useTranslation} from 'react-i18next';
+import {CustomContainer} from '../../components/CustomMaterialComponents/CustomMaterial.component';
 
 
 const ProductPageGrid = styled(Grid)`
@@ -15,6 +16,9 @@ const ProductPageGrid = styled(Grid)`
 		& > .MuiGrid-item {
 			border-bottom: 1px solid ${Colors.purpleLighter};
 		}
+    & > .MuiGrid-item:nth-child(5) {
+      border-bottom: none;
+    }
 	}
 	@media (min-width: 900px) {
     & > .MuiGrid-item:nth-child(3),
@@ -38,8 +42,8 @@ const Product = () => {
 	const {t} = useTranslation();
 	return (
 		<>
-			<Container maxWidth={false} sx={{paddingLeft: {xs: 0, md: 0}, paddingRight: {xs: 0, md: 0}}}>
-				<ProductHeader/>
+			<ProductHeader/>
+			<CustomContainer maxWidth={false} sx={{paddingLeft: {xs: 0, md: 0}, paddingRight: {xs: 0, md: 0}}}>
 				<ProductPageGrid
 					maxWidth="1280px"
 					container
@@ -47,7 +51,7 @@ const Product = () => {
 					justifyContent="flex-start"
 					alignItems="center"
 					sx={
-						{padding: {xs: '50px 16px', md: '70px 0', lg: '100px 0'}}
+						{padding: {xs: '50px 16px 0 16px', md: '70px 0', lg: '100px 0'}}
 					}>
 					{ProductList.map((item, index) => (
 						<Grid item xs={12} md={6} key={index} sx={{padding: '30px'}}>
@@ -55,17 +59,19 @@ const Product = () => {
 						</Grid>
 					))}
 				</ProductPageGrid>
-				<FooterPaper
-					title={t('productPage.pageFooter.title')}
-					css={{backgroundColor: Colors.purpleLighter}}
-					maxWidth="1075px"
-					gridSplit={{text: 9, button: 3}}
-					elevation={1}>
-					<MainButton sx={{ fontSize: '18px'}}>
-						{t('bookDemo.long')}
-					</MainButton>
-				</FooterPaper>
-			</Container>
+			</CustomContainer>
+			<FooterPaper
+				title={t('productPage.pageFooter.title')}
+				css={{backgroundColor: Colors.purpleLighter}}
+				maxWidth="1075px"
+				xs={12}
+				md={8}
+				lg={9}
+				elevation={1}>
+				<MainButton sx={{ fontSize: '18px'}}>
+					{t('bookDemo.long')}
+				</MainButton>
+			</FooterPaper>
 		</>
 	);
 };

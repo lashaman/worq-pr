@@ -26,7 +26,8 @@ const ServicesTypography = styled(Typography)`
 const Services = () => {
 	const [tabValue, setTabValue] = useState(0);
 	const theme = useTheme();
-	const isScreenDesktop = useMediaQuery(theme.breakpoints.up('md'));
+	const isScreenTabletOrDesktop = useMediaQuery(theme.breakpoints.up('md'));
+	const isScreenDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 	const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
 		setTabValue(newValue);
 	};
@@ -38,12 +39,12 @@ const Services = () => {
 					<Box>
 						<ServicesSidebar serviceList={ServicesList} changeHandler={handleTabChange} value={tabValue}/>
 					</Box>
-					{isScreenDesktop && <Box pt="30px" >
-						<NewsBar isScreenDesktop={isScreenDesktop} news={newsData} textMaxLength={maxTextLength}/>
+					{isScreenTabletOrDesktop && <Box pt="30px" >
+						<NewsBar showNewsDate={isScreenDesktop} news={newsData} textMaxLength={maxTextLength}/>
 					</Box>}
 				</Grid>
 				<Grid item xs={12} md={8} >
-					<Sops  isDesktop={isScreenDesktop} />
+					<Sops  isDesktop={isScreenTabletOrDesktop} />
 					{Array(7).fill(1).map(( item, index) => (
 						<TabPanel key={index} value={tabValue} index={index} padding={1}>
 							<Stack
@@ -73,12 +74,12 @@ const Services = () => {
 							</Stack>
 						</TabPanel>) )}
 				</Grid>
-				{!isScreenDesktop && <Grid item xs={12}>
-					<NewsBar isScreenDesktop={isScreenDesktop} news={newsData} textMaxLength={maxTextLength}/>
+				{!isScreenTabletOrDesktop && <Grid item xs={12}>
+					<NewsBar showNewsDate={false} news={newsData} textMaxLength={maxTextLength}/>
 				</Grid>}
 			</Grid>
 		</CustomContainer>
-		{!isScreenDesktop && <Box sx={{margin: '50px 0 20px 0'}}><Divider orientation="horizontal" sx={{borderColor: Colors.purple}} /></Box>}
+		{!isScreenTabletOrDesktop && <Box sx={{margin: '50px 0 20px 0'}}><Divider orientation="horizontal" sx={{borderColor: Colors.purple}} /></Box>}
 	</>
 	);
 };

@@ -11,10 +11,10 @@ import {News} from '../../../../interfaces/news.interface';
 interface NewsBarProps {
 	news: News[];
 	textMaxLength: number;
-	isScreenDesktop: boolean;
+	showNewsDate?: boolean;
 }
 
-const NewsBar = ({news, textMaxLength, isScreenDesktop}: NewsBarProps) => {
+const NewsBar = ({news, textMaxLength, showNewsDate}: NewsBarProps) => {
 	const {t} = useTranslation();
 	return (
 		<SidebarPaper title="servicePage.sidebar.newsPanel.title" fontSize={{xs: '24px', md: '20px', lg: '24px'}}>
@@ -29,7 +29,7 @@ const NewsBar = ({news, textMaxLength, isScreenDesktop}: NewsBarProps) => {
 							<CardTitle text={addThreeDots(t(news.text), textMaxLength)} />
 						}
 						subheader={
-							isScreenDesktop ? <Subheader date={FormatUnixTimeStamp(news.date)} /> : ''
+							showNewsDate ? <Subheader date={FormatUnixTimeStamp(news.date)} /> : ''
 						}
 					/>
 				</Card>
