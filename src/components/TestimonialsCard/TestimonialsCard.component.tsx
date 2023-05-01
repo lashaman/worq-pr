@@ -2,6 +2,7 @@ import React from 'react';
 import Colors from '../../config/colors';
 import {Box, Card, CardActions, CardContent, styled, Typography} from '@mui/material';
 import {TestimonialsInterface} from '../../interfaces/testimonials.interface';
+import {Trans} from 'react-i18next';
 
 
 const TestimonialsCustomCard = styled(Card)`
@@ -40,7 +41,7 @@ const TestimonialsCard = ({
 		<TestimonialsCustomCard>
 			<CardContent sx={{	padding: {xs: '7.5px 20px 5px 20px', md: '15px 30px 10px 30px'}}}>
 				<TestimonialDescription variant="subtitle1" sx={{fontSize: {xs: '16px', md: '18px', lg: '20px'}}} >
-					{description}
+					<Trans i18nKey={description} components={{span: <span />, p: <p />}} />
 				</TestimonialDescription>
 			</CardContent>
 			<TestimonialsCardActions sx={{padding: {xs: '10px 15px', md: '24px 20px'}}}>
@@ -49,10 +50,10 @@ const TestimonialsCard = ({
 				</Box>
 				<Box>
 					<Typography variant="h6"  sx={{fontFamily: 'Poppins Bold', fontSize: {xs: '18px', md: '20px'}}}>
-						{companyRepresentative}
+						<Trans i18nKey={companyRepresentative} />
 					</Typography>
 					<Typography variant="subtitle1" sx={{fontFamily: 'Poppins Medium', fontSize: {xs: '14px', md: '16px'}}}>
-						{companyRepresentativePosition}
+						<Trans i18nKey={companyRepresentativePosition} />
 					</Typography>
 				</Box>
 			</TestimonialsCardActions>

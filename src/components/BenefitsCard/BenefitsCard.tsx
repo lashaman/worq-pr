@@ -2,6 +2,7 @@ import {Box, Card, CardContent, Grid, styled, Typography} from '@mui/material';
 import React from 'react';
 import {CustomCardProps} from '../../interfaces/custom-card-props.interface';
 import Colors from '../../config/colors';
+import {useTranslation} from 'react-i18next';
 
 const BenefitsCustomCard = styled(Card)`
 	display: flex;
@@ -36,6 +37,7 @@ const BenefitsHeaderIcon = styled(Box)`
 `;
 
 const BenefitsCard = ({icon,title, description}: CustomCardProps) => {
+	const {t} = useTranslation();
 	return (
 		<BenefitsCustomCard sx={{
 			minHeight: {xs: '90px', lg: '105px'}}}>
@@ -53,13 +55,13 @@ const BenefitsCard = ({icon,title, description}: CustomCardProps) => {
 				<Grid item xs={10} sx={{paddingLeft: {xs: '26px', lg: '0'}}}>
 					<BenefitsCardContent>
 						<Typography variant="h6" sx={{fontFamily: 'Avenir Black'}}>
-							{title}
+							{t(title)}
 						</Typography>
 						<Typography variant="body1" sx={{
 							fontFamily: 'Poppins Light',
 							fontSize: {xs: '14px', lg: '20px'}
 						}}>
-							{description}
+							{t(description)}
 						</Typography>
 					</BenefitsCardContent>
 				</Grid>

@@ -58,59 +58,13 @@ const ProductImageTitle = styled(Typography)`
 	color: ${Colors.purpleDark};
 `;
 
-const ProductsComponent = () => {
+interface ProductsProps {
+	title: string;
+	productsList: Product[];
+}
+
+const ProductsComponent = ({title, productsList}: ProductsProps) => {
 	const {t} = useTranslation();
-	const Products: Product[] = [
-		{
-			id: 0,
-			title: t('products.workQuality.title'),
-			description: <Trans i18nKey="products.workQuality.description" components={{span: <span />}}/>,
-			icon: CrownIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 1,
-			title: t('products.organizeKnowledge.title'),
-			description: <Trans i18nKey="products.organizeKnowledge.description" components={{span: <span />}}/>,
-			icon: ListCheckIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 2 ,
-			title: t('products.registersInformation.title'),
-			description: <Trans i18nKey="products.registersInformation.description" components={{span: <span />}}/>,
-			icon: BooksIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 3,
-			title: t('products.bestSecurity.title'),
-			description: <Trans i18nKey="products.bestSecurity.description" components={{span: <span />}}/>,
-			icon: ShieldCheckIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 4 ,
-			title: t('products.bestWork.title'),
-			description: <Trans i18nKey="products.bestWork.description" components={{span: <span />}}/>,
-			icon: BadgeCheckIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 5,
-			title: t('products.familiarTools.title'),
-			description: <Trans i18nKey="products.familiarTools.description" components={{span: <span />}}/>,
-			icon: SparklesIcon,
-			buttonText: t('products.workQuality.button'),
-		},
-		{
-			id: 6,
-			title: t('products.create.improve.title'),
-			description: <Trans i18nKey="products.familiarTools.description" components={{span: <span />}}/>,
-			icon: SelectIcon,
-			buttonText: t('products.workQuality.button'),
-		}
-	];
 
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -136,13 +90,13 @@ const ProductsComponent = () => {
 								</Grid>
 								<Grid item xs={12} md={7}>
 									<ProductImageTitle sx={{fontSize: {xs: '28px', md: '40px', lg:'48px'}, padding: {xs: '50px 0 0 0', md: 'unset'}}}>
-										{t('products.productImage.title')}
+										{t(title)}
 									</ProductImageTitle>
 								</Grid>
 							</Grid>
 						</ProductImage>
 					</Grid>
-					{Products.map((product) => (
+					{productsList.map((product) => (
 						<Grid item xs={12} md={4} key={product.id}>
 							<ProductCard {...product} handler={ProductCardClickHandler} />
 						</Grid>

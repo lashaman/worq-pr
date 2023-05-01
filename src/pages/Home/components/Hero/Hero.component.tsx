@@ -47,21 +47,39 @@ const HeroBox = styled(Box)`
 	background-position: left;
 `;
 
+interface HeroNotification {
+	title: string;
+	description: string;
+}
 
-const Hero = () => {
+interface ButtonTexts {
+	secondary: string;
+	mainXs: string;
+	mainMd: string;
+}
+
+interface HeroProps {
+	title: string;
+	description: string;
+	buttonTexts: ButtonTexts;
+	topNotification: HeroNotification;
+	bottomNotification: HeroNotification;
+}
+
+const Hero = ({title, description, buttonTexts, topNotification, bottomNotification}: HeroProps) => {
 	const {t} = useTranslation();
 	return (
 		<HeroContainer>
 			<Grid container >
 				<Grid item xs={12} sm={6} lg={5}>
 					<HeroDescBox sx={{paddingTop: {xs: '50px', md: '100px'}}}>
-						<DescriptionHeading variant="h2"  sx={{fontSize: {xs:'40px' , md: '60px', lg: '68px'}}} gutterBottom>{t('hero.description.heading')}</DescriptionHeading>
-						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Light', fontSize: {xs:'17px' ,md: '20px', lg: '22px'}}} gutterBottom>{t('hero.description.text')}</Typography>
+						<DescriptionHeading variant="h2"  sx={{fontSize: {xs:'40px' , md: '60px', lg: '68px'}}} gutterBottom>{t(title)}</DescriptionHeading>
+						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Light', fontSize: {xs:'17px' ,md: '20px', lg: '22px'}}} gutterBottom>{t(description)}</Typography>
 						<ButtonBox>
-							<SecondaryButton>{t('hero.description.button.discover')}</SecondaryButton>
+							<SecondaryButton>{t(buttonTexts.secondary)}</SecondaryButton>
 							<span style={{width: '15px'}}></span>
-							<MainButton sx={{display: {xs: 'none', md: 'block'}}}>{t('hero.description.button.bookDemo')}</MainButton>
-							<MainButton sx={{display: {xs: 'block', md: 'none'}}}>{t('bookDemo.short')}</MainButton>
+							<MainButton sx={{display: {xs: 'none', md: 'block'}}}>{t(buttonTexts.mainMd)}</MainButton>
+							<MainButton sx={{display: {xs: 'block', md: 'none'}}}>{t(buttonTexts.mainXs)}</MainButton>
 						</ButtonBox>
 					</HeroDescBox>
 				</Grid>
@@ -79,7 +97,7 @@ const Hero = () => {
 									top: {md: '67px', lg: '144px'},
 									left: {md: '-74px', lg: '-9px'},
 								}}>
-									<NotificationCard title="notification.top.title" description="notification.top.description"
+									<NotificationCard title={topNotification.title} description={topNotification.description}
 										icon={Delete}/>
 								</Box>
 								<Box sx={{
@@ -87,7 +105,7 @@ const Hero = () => {
 									bottom: {md: '-47px',lg: '144px'},
 									right: {md: '24px',lg: '-9px'},
 								}}>
-									<NotificationCard title="notification.bottom.title" description="notification.bottom.description"
+									<NotificationCard title={bottomNotification.title} description={bottomNotification.description}
 										icon={PiggyBank}/>
 								</Box>
 							</Box>

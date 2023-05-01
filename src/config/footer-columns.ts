@@ -1,34 +1,43 @@
-export const FooterColumns = {
+import FooterColumnsInterface from '../interfaces/footer-columns.interface';
+
+export const FooterColumns: FooterColumnsInterface = {
 	services: {
-		title: 'Services',
+		title: 'footer.serviceList.title',
 		items: [
-			'Audits',
-			'Compliance & Regulation',
-			'Assessments',
-			'SOP’s & Work Instructions',
-			'System Builds',
-			'Quality & Inspection Test Plans',
-			'Business Workflows',
+			'footer.serviceList.item1',
+			'footer.serviceList.item2',
+			'footer.serviceList.item3',
+			'footer.serviceList.item4',
+			'footer.serviceList.item5',
+			'footer.serviceList.item6',
+			'footer.serviceList.item7',
 		],
 	},
 	product: {
-		title: 'Product',
+		title: 'footer.productList.title',
 		items: [
-			'Working',
-			'Tracking',
-			'Learning',
-			'Registers',
-			'Templates',
-			'Security',
-			'Integrations',
+			'footer.productList.item1',
+			'footer.productList.item2',
+			'footer.productList.item3',
+			'footer.productList.item4',
+			'footer.productList.item5',
+			'footer.productList.item6',
+			'footer.productList.item7',
 		],
 	},
 	about: {
-		title: 'About',
+		title: 'footer.aboutList.title',
 		items: [
-			'Company',
-			'Services',
-			'News',
+			'footer.aboutList.item1',
+			'footer.aboutList.item2',
+			'footer.aboutList.item3',
 		],
 	},
+	contactUs: {
+		title: 'footer.contactUsList.title',
+		phone: 'footer.contactUsList.phone',
+		email: 'footer.contactUsList.email',
+		copyright: 'footer.contactUsList.copyright',
+		privacyPolicy: 'footer.contactUsList.privacyPolicy',
+	}
 };

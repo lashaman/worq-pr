@@ -6,6 +6,8 @@ import {MainButton, SecondaryButton} from '../../../../components/Buttons/Button
 import ServicesStepper from '../../../../components/ServiceStepper/ServicesStepper.component';
 import TabPanel from '../../../../components/TabPanel/TabPanel.component';
 import {ServicesList, TabPanelList} from '../../../../config/services-lists';
+import {ServiceListInterface} from '../../../../interfaces/service-list.interface';
+import {TabPanelListInterface} from '../../../../interfaces/tabpanel-list.interface';
 
 const ServicesContainer = styled(Container)`
   width: 100%;
@@ -74,8 +76,13 @@ const StepperBox = styled(Box)`
 `;
 
 
+interface ServicesProps {
+	title: string;
+	servicesList: ServiceListInterface[];
+	tabPanelList: TabPanelListInterface[];
+}
 
-const Services = () => {
+const Services = ({title, servicesList, tabPanelList}: ServicesProps) => {
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -89,7 +96,7 @@ const Services = () => {
 				<Grid item xs={12}>
 					<ServicesTitle variant="h3" sx={{fontSize: {xs: '28px', md: '40px', lg: '48px'}}}  gutterBottom>
 						<Trans
-							i18nKey="services.title"
+							i18nKey={title}
 							components={{ span: <span />}}
 						/>
 					</ServicesTitle>
@@ -100,7 +107,7 @@ const Services = () => {
 					</StepperBox>
 				</Grid>
 				<Grid item xs={12} sx={{display: {md: 'none'}}}>
-					{ServicesList.slice(0,2).map((item, index) => (
+					{servicesList.slice(0,2).map((item, index) => (
 						<SecondaryButton
 							sx={{
 								width: '100%',
@@ -116,7 +123,7 @@ const Services = () => {
 					))}
 				</Grid>
 				<Grid item xs={12} md={5} lg={6}>
-					{TabPanelList.map((item, index) => (
+					{tabPanelList.map((item, index) => (
 						<TabPanel key={index} value={value} index={index}>
 							<ServicesDescriptionTitle  sx={{
 								fontSize: {xs: '22px', md: '28px', lg: '36px'},
@@ -142,7 +149,7 @@ const Services = () => {
 					))}
 				</Grid>
 				<Grid item xs={12} sx={{display: {md: 'none'}}}>
-					{ServicesList.slice(2,7).map((item, index) => (
+					{servicesList.slice(2,7).map((item, index) => (
 						<SecondaryButton
 							sx={{
 								width: '100%',

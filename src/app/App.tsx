@@ -13,10 +13,12 @@ import Services from '../pages/Services/Services.page';
 import worqRoutes from '../config/routes';
 import About from '../pages/About/About.page';
 import ErrorPage from '../pages/Error/Error.page';
+import {FooterColumns} from '../config/footer-columns';
+import pages from '../config/pages';
 
 const App = () => (
 	<>
-		<Header />
+		<Header menuList={pages} />
 		<Routes>
 			<Route path={worqRoutes.home} element={<Home />} />
 			<Route path={worqRoutes.products} element={<Product />} />
@@ -24,7 +26,7 @@ const App = () => (
 			<Route path={worqRoutes.about} element={<About />} />
 			<Route path="*" element={<ErrorPage />} />
 		</Routes>
-		<Footer />
+		<Footer footerLists={FooterColumns}/>
 	</>
 );
 

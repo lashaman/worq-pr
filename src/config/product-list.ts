@@ -5,6 +5,7 @@ import CustomerService from '../assets/icons/customer-service.svg';
 import Ai from '../assets/icons/ai.svg';
 import Dashboard from '../assets/icons/dashboard.svg';
 
+
 const ProductList: CustomCardProps[] = [
 	{
 		title: 'productPage.list.monitor.title',

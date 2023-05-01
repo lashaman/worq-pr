@@ -2,11 +2,7 @@ import React from 'react';
 import {Box, Container, Divider, Grid, styled, Typography} from '@mui/material';
 import {t} from 'i18next';
 import Colors from '../../../../config/colors';
-import Bastil from '../../../../assets/images/bastil.png';
-import Boleir from '../../../../assets/images/boleir.png';
-import Darkside from '../../../../assets/images/darkside.png';
-import EdgeWater from '../../../../assets/images/edgewater.png';
-import FifthFlour from '../../../../assets/images/fifthflour.png';
+import {useTranslation} from 'react-i18next';
 
 const ClientsContainer = styled(Container)`
   display: flex;
@@ -45,21 +41,16 @@ const ImgGrid = styled(Grid)`
 `;
 
 
-const clients = [
-	Boleir,
-	EdgeWater,
-	Bastil,
-	FifthFlour,
-	Darkside
-];
 
-const clientsXs = [
-	EdgeWater,
-	Bastil,
-	FifthFlour,
-];
 
-const Clients = () => {
+interface ClientsProps {
+	title: string;
+	clients: string[];
+	clientsXs: string[];
+}
+
+const Clients = ({title, clients, clientsXs}: ClientsProps) => {
+	const {t} = useTranslation();
 	return (
 		<ClientsContainer maxWidth={false}>
 			<ServiceBox sx={{
@@ -73,7 +64,7 @@ const Clients = () => {
 							textAlign: {xs: 'center', md: 'left'},
 							borderRight: {xs: 'none', md: `2px solid ${Colors.purple}`},
 						}}>
-							{t('clients.title')}
+							{t(title)}
 						</ServiceTitle>
 					</Grid>
 					<Divider orientation="horizontal" variant="middle" sx={{ width: '25%', margin: '0 auto', display: {xs: 'flex', md: 'none'}}} flexItem />

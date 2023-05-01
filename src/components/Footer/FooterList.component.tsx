@@ -1,15 +1,14 @@
 import {Box, Divider, Grid, Link, List, ListItem, styled, Typography} from '@mui/material';
 import React from 'react';
+import {FooterColumn} from '../../interfaces/footer-columns.interface';
 import Colors from '../../config/colors';
+import {useTranslation} from 'react-i18next';
 
-interface FooterList {
-	title: string;
-	items: string[];
-}
+
 
 interface FooterListRendererProps {
 	isScreenMobile?: boolean;
-	list: FooterList;
+	list: FooterColumn;
 }
 
 const FooterListTitle = styled(Typography)`
@@ -38,42 +37,45 @@ const FooterListItem = styled(Typography)`
 `;
 
 
-const FooterList = ({list, isScreenMobile}: FooterListRendererProps) => (
-	<>
-		{isScreenMobile && <Divider  sx={{borderTop: `2px solid ${Colors.purple}`, width: '20%', margin: '10px 0 20px 0'}}/>}
-
-		{!isScreenMobile && (
-			<List>
-				<FooterListTitle variant="h6" >
-					{list.title}
-				</FooterListTitle>
-				{list.items.map((item, i) => (
-					<ListItem key={i} disableGutters>
-						<Link href="src/features#" color="inherit" underline="hover">
-							<FooterListItem>{item}</FooterListItem>
-						</Link>
-					</ListItem>
-				))}
-			</List>
-		)}
-		{isScreenMobile && (
-			<>
-				<Box>
-					<FooterListTitle variant="h6" >
-						{list.title}
+const FooterList = ({list, isScreenMobile}: FooterListRendererProps) => {
+	const {t} = useTranslation();
+	return	(
+		<>
+			{isScreenMobile &&
+			<Divider sx={{borderTop: `2px solid ${Colors.purple}`, width: '20%', margin: '10px 0 20px 0'}}/>}
+			{!isScreenMobile && (
+				<List>
+					<FooterListTitle variant="h6">
+						{t(list.title)}
 					</FooterListTitle>
-				</Box>
-				<Grid container spacing={1} mb={2}>
 					{list.items.map((item, i) => (
-						<Grid item xs={3} key={i}>
+						<ListItem key={i} disableGutters>
 							<Link href="src/features#" color="inherit" underline="hover">
-								<FooterListItem>{item}</FooterListItem>
+								<FooterListItem>{t(item)}</FooterListItem>
 							</Link>
-						</Grid>))}
-				</Grid>
-			</>
-		)}
-	</>
-);
+						</ListItem>
+					))}
+				</List>
+			)}
+			{isScreenMobile && (
+				<>
+					<Box>
+						<FooterListTitle variant="h6">
+							{t(list.title)}
+						</FooterListTitle>
+					</Box>
+					<Grid container spacing={1} mb={2}>
+						{list.items.map((item, i) => (
+							<Grid item xs={3} key={i}>
+								<Link href="src/features#" color="inherit" underline="hover">
+									<FooterListItem>{t(item)}</FooterListItem>
+								</Link>
+							</Grid>))}
+					</Grid>
+				</>
+			)}
+		</>
+	);
+};
 
 export default FooterList;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import LogoMain from '../../assets/icons/logo-main.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {
@@ -15,11 +15,11 @@ import {
 	styled,
 } from '@mui/material';
 import Button from '@mui/material/Button';
-import Colors from '../../config/colors';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
-import pages from '../../config/pages';
+import {MenuList} from '../../interfaces/menu-list.interface';
+import Colors from '../../config/colors';
 import worqRoutes from '../../config/routes';
 
 
@@ -60,9 +60,13 @@ const MenuIcon = () => (
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
-const Header = () => {
+interface HeaderProps {
+	menuList: MenuList[];
+}
+
+const Header = ({menuList}: HeaderProps) => {
 	const { t } = useTranslation();
-	const [state, setState] = React.useState({
+	const [state, setState] = useState({
 		top: false,
 		left: false,
 		bottom: false,
@@ -77,10 +81,10 @@ const Header = () => {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<List>
-				{pages.map((page, index) => (
-					<ListItem key={page.key + index} >
-						<ListItemButton href={page.route}>
-							<ListItemText primary={t(page.key)} />
+				{menuList.map((menuItem, index) => (
+					<ListItem key={menuItem.key + index} >
+						<ListItemButton href={menuItem.route}>
+							<ListItemText primary={t(menuItem.key)} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -113,18 +117,18 @@ const Header = () => {
 						}} />
 					</Button>
 					<HeaderBox sx={{ display: { xs: 'none', md: 'block' } }}>
-						{pages.map((page) => (
+						{menuList.map((menuItem) => (
 							<HeaderButton
-								key={page.key}
+								key={menuItem.key}
 								endIcon={<KeyboardArrowDownIcon />}
-								href={page.route}
+								href={menuItem.route}
 								sx={{
 									fontSize: {xs: '15px', sm: '16px', lg: '18px'},
 									paddingLeft: {xs: '10px', lg: '25px'},
 									paddingRight: {xs: '10px', lg: '25px'},
 								}}
 							>
-								{t(page.key)}
+								{t(menuItem.key)}
 							</HeaderButton>
 						))}
 					</HeaderBox>

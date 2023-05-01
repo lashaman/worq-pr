@@ -13,6 +13,7 @@ import Colors from '../../config/colors';
 import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {Product} from '../../interfaces/product.interface';
+import {Trans} from 'react-i18next';
 
 
 const ProductIconBox = styled(Box)`
@@ -104,13 +105,13 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 					}
 					title={
 						<ProductTitle variant="h3" sx={{fontSize: {xs: '24px', lg:'30px'}}}>
-							{title}
+							<Trans i18nKey={title} />
 						</ProductTitle>
 					}
 				/>
 				<ProductCardContent sx={{height: {xs: '96px', lg: '81px'}, paddingBottom: {xs: '16px', lg: '20px'}}}>
 					<ProductDescription sx={{fontSize: {xs: '15px', lg:'18px'}}}>
-						{description}
+						<Trans i18nKey={description} components={{span: <span />}}/>
 					</ProductDescription>
 				</ProductCardContent>
 				<ProductCardActions sx={{height: {xs: '55px', lg: '64px'}}} disableSpacing>
@@ -118,7 +119,7 @@ const ProductCard = ({id, title, description, icon, buttonText, handler}: Produc
 						size="small"
 						onClick={() => handler(id)}
 						endIcon={<KeyboardArrowRightIcon fontSize="large" sx={{marginRight: '-2px'}} />}>
-						{buttonText}
+						<Trans i18nKey={buttonText} />
 					</ProductCardButton>
 				</ProductCardActions>
 			</Grid>

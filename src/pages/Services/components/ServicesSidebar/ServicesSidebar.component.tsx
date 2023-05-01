@@ -4,7 +4,7 @@ import Colors from '../../../../config/colors';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import SidebarPaper from '../../../../components/SidebarPaper/SidebarPaper.component';
-import {ServiceList} from '../../../../interfaces/service-list.interface';
+import {ServiceListInterface} from '../../../../interfaces/service-list.interface';
 
 const ServiceSideBarButton = styled(Button)`
   width: 100%;
@@ -24,7 +24,7 @@ const ServiceSideBarButton = styled(Button)`
 `;
 
 interface ServicesSidebarProps {
-	serviceList:  ServiceList[];
+	serviceList:  ServiceListInterface[];
 	changeHandler: (event: React.SyntheticEvent, newValue: number) => void;
 	value: number;
 }

@@ -66,36 +66,17 @@ const CustomSwiper = styled(Swiper)`
   }
 `;
 
-const Testimonials = () => {
+interface TestimonialsProps {
+	title: string;
+	subTitle: string;
+	testimonials: TestimonialsInterface[];
+}
+
+const Testimonials = ({title, subTitle, testimonials}: TestimonialsProps) => {
 	const {t} = useTranslation();
 	const theme = useTheme();
 	const showPagination = useMediaQuery(theme.breakpoints.down('md'));
-	const testimonialsList: TestimonialsInterface[] = [
-		{
-			description: <Trans i18nKey="testimonials.first.description" components={{span: <span />, p: <p />}} />,
-			companyIcon: TestimonialsCompanyIcon,
-			companyRepresentative: t('testimonials.first.companyRepresentative.name'),
-			companyRepresentativePosition: t('testimonials.first.companyRepresentative.position')
-		},
-		{
-			description: <Trans i18nKey="testimonials.second.description" components={{span: <span />, p: <p />}} />,
-			companyIcon: TestimonialsCompanyIcon,
-			companyRepresentative: t('testimonials.second.companyRepresentative.name'),
-			companyRepresentativePosition: t('testimonials.second.companyRepresentative.position')
-		},
-		{
-			description: <Trans i18nKey="testimonials.first.description" components={{span: <span />, p: <p />}} />,
-			companyIcon: TestimonialsCompanyIcon,
-			companyRepresentative: t('testimonials.first.companyRepresentative.name'),
-			companyRepresentativePosition: t('testimonials.first.companyRepresentative.position')
-		},
-		{
-			description: <Trans i18nKey="testimonials.second.description" components={{span: <span />, p: <p />}} />,
-			companyIcon: TestimonialsCompanyIcon,
-			companyRepresentative: t('testimonials.second.companyRepresentative.name'),
-			companyRepresentativePosition: t('testimonials.second.companyRepresentative.position')
-		},
-	];
+
 
 	const [nextButtonDisabled, setNextButtonDisabled] = useState(false);
 	const [prevButtonDisabled, setPrevButtonDisabled] = useState(false);
@@ -112,7 +93,7 @@ const Testimonials = () => {
 							width: {xs: '80%', lg: '100%'},
 						}}>
 							<Trans
-								i18nKey="testimonials.title"
+								i18nKey={title}
 								components={{ span: <span />}}
 							/>
 						</TestimonialsTitle>
@@ -121,7 +102,7 @@ const Testimonials = () => {
 						<Grid item xs={10}>
 							<TestimonialsSubTitle variant={'h2'} sx={{fontSize: {xs: '16px', md: '20px'}, borderBottom: {md: `1px solid ${Colors.purple}`}, marginBottom: {md: '20px'}}} >
 								<Trans
-									i18nKey="testimonials.subtitle"
+									i18nKey={subTitle}
 									components={{ span: <span />}}
 								/>
 							</TestimonialsSubTitle>
@@ -176,7 +157,7 @@ const Testimonials = () => {
 							}
 						}}
 					>
-						{testimonialsList.map((testimonial: TestimonialsInterface, index: number) => (
+						{testimonials.map((testimonial: TestimonialsInterface, index: number) => (
 							<SwiperSlide key={index} virtualIndex={index} >
 								<TestimonialsCard {...testimonial}/>
 							</SwiperSlide>
