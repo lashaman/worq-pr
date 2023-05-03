@@ -1,6 +1,12 @@
 
 export const HeroDetails = {
 	title: 'hero.description.heading',
+	titles: [
+		'hero.description.heading',
+		'hero.description.heading1',
+		'hero.description.heading2',
+		'hero.description.heading3',
+	],
 	description: 'hero.description.text',
 	buttonTexts: {
 		secondary: 'hero.description.button.discover',

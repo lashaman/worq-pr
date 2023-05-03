@@ -3,6 +3,7 @@ import React from 'react';
 import {Box, CardContent, Grid, styled, Typography} from '@mui/material';
 import {useTranslation} from 'react-i18next';
 import {MainButton, SecondaryButton} from '../../../../components/Buttons/Buttons.component';
+import Typewriter from 'typewriter-effect';
 import Colors from '../../../../config/colors';
 import NotificationCard from '../../../../components/NotificationCard/NotificationCard.component';
 import PiggyBank from '../../../../assets/icons/piggy-bank.svg';
@@ -30,6 +31,7 @@ const DescriptionHeading = styled(Typography)`
   text-align: left;
 	font-family: 'Avenir Black';
   color: ${Colors.purple};
+	min-height: 176.8px;
   font-weight: 700;
 `;
 
@@ -60,20 +62,29 @@ interface ButtonTexts {
 
 interface HeroProps {
 	title: string;
+	titles: string[];
 	description: string;
 	buttonTexts: ButtonTexts;
 	topNotification: HeroNotification;
 	bottomNotification: HeroNotification;
 }
 
-const Hero = ({title, description, buttonTexts, topNotification, bottomNotification}: HeroProps) => {
+const Hero = ({title, titles, description, buttonTexts, topNotification, bottomNotification}: HeroProps) => {
 	const {t} = useTranslation();
 	return (
 		<HeroContainer>
 			<Grid container >
 				<Grid item xs={12} sm={6} lg={5}>
 					<HeroDescBox sx={{paddingTop: {xs: '50px', md: '100px'}}}>
-						<DescriptionHeading variant="h2"  sx={{fontSize: {xs:'40px' , md: '60px', lg: '68px'}}} gutterBottom>{t(title)}</DescriptionHeading>
+						<DescriptionHeading variant="h2"  sx={{fontSize: {xs:'40px' , md: '60px', lg: '68px'}}} gutterBottom>
+							<Typewriter
+								options={{
+									strings: titles.map(title => t(title)),
+									autoStart: true,
+									loop: true,
+								}}
+							/>
+						</DescriptionHeading>
 						<Typography variant="h5" component="h5" sx={{fontFamily: 'Poppins Light', fontSize: {xs:'17px' ,md: '20px', lg: '22px'}}} gutterBottom>{t(description)}</Typography>
 						<ButtonBox>
 							<SecondaryButton>{t(buttonTexts.secondary)}</SecondaryButton>
